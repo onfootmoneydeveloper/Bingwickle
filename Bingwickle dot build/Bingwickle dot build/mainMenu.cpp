@@ -1,0 +1,869 @@
+#pragma once
+#pragma warning(disable : 4244) //_CRT_LOSS_OFDATA_NO_WARNINGS
+#pragma warning(disable : 6387) //_SPECIFICATION_FOR_FUNCITION 'MEMCPY'
+
+#include <iostream>
+#include <conio.h>
+#include <string>
+#include <Windows.h>
+#include <conio.h>
+#include <mmsystem.h>
+#include <cstdlib>
+#include <thread>
+#include <array>
+
+#include "setConsole.h"
+#include "globals.h"
+#include "defs.h"
+#include "commandLPrmpt.h"
+#include "playBing.h"
+
+
+// all properties of our main menu.
+// 1. main main list, 
+// 2. main main selcted list, 
+// 3. size of list, 
+// 4. size of list -1, 
+// 5. counter, 
+// 6. active checker
+
+std::string mainMenuItem[4] = { "PLAY", "NUDGE" ,"SETTINGS", "EXIT" };
+std::string mainMenuItemSelected[4] = { "   PLAY", "   NUDGE", "   SETTINGS", "   EXIT", };
+int mainMenuSize = end(mainMenuItem) - begin(mainMenuItem);
+int menuSizeMinusOneForArrayReference = mainMenuSize - 1;
+int counterForMainMenu = 0;
+bool isMainMenuActive = true;
+
+
+std::string optionMenuItem[5] = { "CURSOR ", "SOUND", "SNAP WINDOW" ,"INFO", "GO BACK" };
+std::string optionMenuItemSelected[5] = { "   CURSOR ", "   SOUND", "   SNAP WINDOW", "   INFO", "   GO BACK" };
+int optionMenuSize = end(optionMenuItem) - begin(optionMenuItem);
+int optionSizeMinusOneForArrayReference = optionMenuSize - 1;
+int counterForOptionMenu = 0;
+bool isOptionMenuActive = false;
+
+bool cursorOff = true;
+
+bool redColorOn = false;
+bool blueColorOn = false;
+bool purpleColorOn = false;
+bool yellowColorOn = false;
+bool greenColorOn = true;           // as green is on by default
+bool aquaColorOn = false;
+
+// push our mainmenu down!
+void pushMenuToCentre() {
+    std::cout << "\n\n\n\n\n\n\n";
+}
+
+// push our optionsmenu down!
+void pushOptionsMenuToCentre() {
+    std::cout << "\n\n\n\n\n\n";
+}
+
+// this is the default screen that we only call once.
+void DisplayDefaultMenu() {
+
+    system("cls");      // before we show menu, we clear console
+    setcolor(white, black); // setting our default colour here
+
+
+    pushMenuToCentre();
+    std::cout << "             "; // <<   CHANGE SPACE IF SELECTED
+    std::cout << mainMenuItemSelected[0] << endl;
+    std::cout << endl;
+    std::cout << "                ";
+    std::cout << mainMenuItem[1] << endl;
+    std::cout << endl;
+    std::cout << "                ";
+    std::cout << mainMenuItem[2] << endl;
+    std::cout << endl;
+    std::cout << "                ";
+    std::cout << mainMenuItem[3] << endl;
+
+}
+
+// check what menu color is active
+void MenuColor() {
+
+    if (aquaColorOn == true) {
+
+        std::cout << "             "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(aqua, black);
+        std::cout << ">";
+        setcolor(white, black);
+
+    }
+
+    else if (greenColorOn == true) {
+        std::cout << "             "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(green, black);
+        std::cout << ">";
+        setcolor(white, black);
+
+    }
+
+    else if (redColorOn == true) {
+
+        std::cout << "             "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(red, black);
+        std::cout << ">";
+        setcolor(white, black);
+
+    }
+
+    else if (blueColorOn == true) {
+
+        std::cout << "             "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(blue, black);
+        std::cout << ">";
+        setcolor(white, black);
+
+    }
+
+    else if (purpleColorOn == true) {
+
+        std::cout << "             "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(purple, black);
+        std::cout << ">";
+        setcolor(white, black);
+
+    }
+
+    else if (yellowColorOn == true) {
+
+        std::cout << "             "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(yellow, black);
+        std::cout << ">";
+        setcolor(white, black);
+
+    }
+
+}
+
+// check what menu color is active (option menu!)
+void OptionMenuColor() {
+
+    if (aquaColorOn == true) {
+
+        std::cout << "           "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(aqua, black);
+        std::cout << ">";
+        setcolor(white, black);
+
+    }
+
+    else if (greenColorOn == true) {
+        std::cout << "           "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(green, black);
+        std::cout << ">";
+        setcolor(white, black);
+
+    }
+
+    else if (redColorOn == true) {
+
+        std::cout << "           "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(red, black);
+        std::cout << ">";
+        setcolor(white, black);
+
+    }
+
+    else if (blueColorOn == true) {
+
+        std::cout << "           "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(blue, black);
+        std::cout << ">";
+        setcolor(white, black);
+
+    }
+
+    else if (purpleColorOn == true) {
+
+        std::cout << "           "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(purple, black);
+        std::cout << ">";
+        setcolor(white, black);
+
+    }
+
+    else if (yellowColorOn == true) {
+
+        std::cout << "           "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(yellow, black);
+        std::cout << ">";
+        setcolor(white, black);
+
+    }
+
+}
+
+// this is the MAIN MENU list
+void DisplayMainMenu() {
+
+    // we apply the ScreenSettings again before we display, 
+    // just in case of 
+    // any interruptions outside of the program
+
+    // disable mouse highlighting on console
+    //disableMouseHighlighting();
+
+    // Maximize button disabled
+    //disableMaximize();
+
+    // setting the window title
+    //setWindowTitle();
+
+    // remove scrollbar
+    //removeScrollBar();
+
+    if (cursorOff == true) {
+
+        hideTheCursor();
+    }
+
+
+
+    /*
+
+        This function will be called to display a specifc "state" in the menu system.
+        each time the function is called, it display the state depending on the value
+        of counterMainMenu. starting at 0 and cannot get any higher that our INDEX RANGE.
+
+        If you add a new item in an array, this will increase the value of the maxsize for
+        that menu, so you can ignore the if/else if statement below.
+
+        You WILL, need to update each case (1-x) to display what you want each time.
+
+
+        // cout << "size is: " << mainMenuSize;
+
+
+     */
+
+
+
+
+     // **THIS DOES NOT NEED TO BE TOUCHED DUE TO MAIN MENU SIZE**
+     // we check to make sure the counter does not go over the max
+    if (counterForMainMenu >= mainMenuSize) {
+
+        counterForMainMenu--;
+    }
+
+    // make sure we dont go below zero
+    else if (counterForMainMenu < 0) {
+        counterForMainMenu = 0;
+    }
+
+
+
+    // now we check what number our conter is at. Each time we click the key, we 
+    // either ++ or -- out counter, this lets us know where (IN THE ARRAY) we are. 
+    // so if we're at 1, then show me the mainMenuItemSelected[1] index. And so on.
+
+    // When you update these cases, it would look like this: 
+    /*
+
+
+
+        system("cls");
+
+        std::cout << "\n\n\n\n\n\n\n";
+        std::cout << "             "; //
+        std::cout << mainMenuItemSelected[0] << endl;
+        std::cout << endl;
+        std::cout << "                ";
+        std::cout << mainMenuItem[1] << endl;
+        std::cout << endl;
+        std::cout << "                ";
+        std::cout << mainMenuItem[2] << endl;
+        std::cout << endl;
+        std::cout << "                ";
+        std::cout << mainMenuItem[3] << endl;
+
+
+
+        std::cout << endl;                          //<--- added!**
+        std::cout << "                ";
+        std::cout << mainMenuItem[4] << endl;
+
+
+        ** for whatever the case "value" (say 3), you will only display that array
+        * as a mainMenuItemSelected. Anything else is from mainMenuItem with spacings.
+        *
+        *
+        *
+        *
+
+        // USE THIS ABOVE SELECTED ITEMS
+        std::cout << "             "; // <<   ** USE THIS ABOVE SELECTED ITEMS.**
+        setcolor(green, black);
+        std::cout << ">";
+        setcolor(white, black);
+        // ONLY USE ME ABOVE SELECTED ITEMS
+
+
+
+    */
+
+    switch (counterForMainMenu) {
+
+
+        // **each case is an indication of which location we are in the ARRAY. **
+
+    case 0:
+
+        system("cls");  // clear console.
+        pushMenuToCentre();
+
+        // USE THIS ABOVE SELECTED ITEMS
+        MenuColor();
+        // ONLY USE ME ABOVE SELECTED ITEMS
+
+        std::cout << mainMenuItemSelected[0] << endl;
+        std::cout << endl;
+        std::cout << "                ";
+        std::cout << mainMenuItem[1] << endl;
+        std::cout << endl;
+        std::cout << "                ";
+        std::cout << mainMenuItem[2] << endl;
+        std::cout << endl;
+        std::cout << "                ";
+        std::cout << mainMenuItem[3] << endl;
+
+        break;
+
+    case 1:
+
+        system("cls");
+        pushMenuToCentre();
+        std::cout << "                ";
+        std::cout << mainMenuItem[0] << endl;
+        std::cout << endl;
+
+
+        // USE THIS ABOVE SELECTED ITEMS
+        MenuColor();
+        // ONLY USE ME ABOVE SELECTED ITEMS
+
+
+        std::cout << mainMenuItemSelected[1] << "!" << endl;
+        std::cout << endl;
+        std::cout << "                ";
+        std::cout << mainMenuItem[2] << endl;
+        std::cout << endl;
+        std::cout << "                ";
+        std::cout << mainMenuItem[3] << endl;
+
+
+
+
+
+
+
+        /*
+
+            NUDGE REMINDR.
+             * we want to be able to detect (when hovered) that the user
+             * has not yet nudged their current progress!
+
+        */
+
+        std::cout << "\n\n";
+        std::cout << "        ";
+        setcolor(yellow, black);
+        std::cout << "*save ur progress*" << endl;
+        setcolor(white, black);
+        std::cout << endl;
+
+
+        break;
+
+    case 2:
+
+        system("cls");
+        pushMenuToCentre();
+        std::cout << "                ";
+        std::cout << mainMenuItem[0] << endl;
+        std::cout << endl;
+        std::cout << "                ";
+        std::cout << mainMenuItem[1] << endl;
+        std::cout << endl;
+
+
+        // USE THIS ABOVE SELECTED ITEMS
+        MenuColor();
+        // ONLY USE ME ABOVE SELECTED ITEMS
+
+
+        std::cout << mainMenuItemSelected[2] << endl;
+        std::cout << endl;
+        std::cout << "                ";
+        std::cout << mainMenuItem[3] << endl;
+
+        break;
+
+    case 3:
+
+        system("cls");
+        pushMenuToCentre();
+        std::cout << "                ";
+        std::cout << mainMenuItem[0] << endl;
+        std::cout << endl;
+        std::cout << "                ";
+        std::cout << mainMenuItem[1] << endl;
+        std::cout << endl;
+        std::cout << "                ";
+        std::cout << mainMenuItem[2] << endl;
+        std::cout << endl;
+
+
+        // USE THIS ABOVE SELECTED ITEMS
+        MenuColor();
+        // ONLY USE ME ABOVE SELECTED ITEMS
+
+
+        std::cout << mainMenuItemSelected[3] << endl;
+
+
+
+
+
+
+
+
+
+        /*
+
+            NUDGE REMINDR.
+             * we want to be able to detect (when hovered) that the user
+             * has not yet nudged their current progress!
+
+        */
+
+        std::cout << "\n\n";
+        std::cout << "          ";
+        setcolor(red, black);
+        std::cout << "*make sure u nudge*" << endl;
+        setcolor(white, black);
+        std::cout << endl;
+
+        break;
+
+    default:
+        break;
+    }
+
+}
+
+// this is the OPTIONS MENU
+void DisplayOptionsMenu() {
+
+    // we apply the ScreenSettings again before we display, 
+    // just in case of 
+    // any interruptions outside of the program
+
+    // disable mouse highlighting on console
+    //disableMouseHighlighting();
+
+    // Maximize button disabled
+    //disableMaximize();
+
+    // setting the window title
+    //setWindowTitle();
+
+    // remove scrollbar
+    //removeScrollBar();
+
+    if (cursorOff == true) {
+
+        hideTheCursor();
+    }
+
+
+    if (counterForOptionMenu >= optionMenuSize) {
+
+        counterForOptionMenu--;
+    }
+
+    // make sure we dont go below zero
+    else if (counterForOptionMenu < 0) {
+        counterForOptionMenu = 0;
+    }
+
+    switch (counterForOptionMenu) {
+
+
+        // **each case is an indication of which location we are in the ARRAY. **
+
+    case 0:
+
+        system("cls");  // clear console.
+        pushOptionsMenuToCentre();
+
+
+        // USE THIS ABOVE SELECTED ITEMS
+        OptionMenuColor();
+        // ONLY USE ME ABOVE SELECTED ITEMS
+
+        std::cout << optionMenuItemSelected[0] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[1] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[2] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[3] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[4] << endl;
+
+        break;
+
+    case 1:
+
+        system("cls");
+        pushOptionsMenuToCentre();
+        std::cout << "              ";
+        std::cout << optionMenuItem[0] << endl;
+        std::cout << endl;
+
+
+        // USE THIS ABOVE SELECTED ITEMS
+        OptionMenuColor();
+        // ONLY USE ME ABOVE SELECTED ITEMS
+
+
+        std::cout << optionMenuItemSelected[1] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[2] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[3] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[4] << endl;
+
+        break;
+
+    case 2:
+
+        system("cls");
+        pushOptionsMenuToCentre();
+        std::cout << "              ";
+        std::cout << optionMenuItem[0] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[1] << endl;
+        std::cout << endl;
+
+
+        // USE THIS ABOVE SELECTED ITEMS
+        OptionMenuColor();
+        // ONLY USE ME ABOVE SELECTED ITEMS
+
+
+        std::cout << optionMenuItemSelected[2] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[3] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[4] << endl;
+
+        break;
+
+    case 3:
+
+        system("cls");
+        pushOptionsMenuToCentre();
+        std::cout << "              ";
+        std::cout << optionMenuItem[0] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[1] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[2] << endl;
+        std::cout << endl;
+
+
+        // USE THIS ABOVE SELECTED ITEMS
+        OptionMenuColor();
+        // ONLY USE ME ABOVE SELECTED ITEMS
+
+
+        std::cout << optionMenuItemSelected[3] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[4] << endl;
+
+        break;
+
+    case 4:
+
+        system("cls");
+        pushOptionsMenuToCentre();
+        std::cout << "              ";
+        std::cout << optionMenuItem[0] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[1] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[2] << endl;
+        std::cout << endl;
+        std::cout << "              ";
+        std::cout << optionMenuItem[3] << endl;
+        std::cout << endl;
+
+        // USE THIS ABOVE SELECTED ITEMS
+        OptionMenuColor();
+        // ONLY USE ME ABOVE SELECTED ITEMS
+
+
+        std::cout << optionMenuItemSelected[4] << endl;
+
+        break;
+
+    default:
+        break;
+    }
+
+}
+
+// shows our infomation page
+void showInfo() {
+
+    system("cls");
+
+    // Bingwickle was designed to make the boring seem a little more fun. Designed
+    // by Blake Carrington, published by ONFOOTMONEY©. 
+    // Follow @bingwickle for future updates (if there's every any!)
+
+   /* std::string InfoMessage =   "           BingwickleBuddy.\n\n"
+                                "     Designed by Blake Carrington\n\n"
+                                "      Published by ONFOOTMONEY©\n\n"
+                                "       @bingwickle for updates\n";*/
+
+    std::string InfoMessage =   "           BINGWICKLEBUDDY\n\n"
+                                "     DESIGNED BY BLAKE CARRINGTON\n\n"
+                                "      PUBLISHED BY ONFOOTMONEY©\n\n"
+                                "      (AT)BINGWICKLE FOR UPDATES\n";
+
+
+    int x = 0;
+
+    // center the info message
+    cout << "\n\n\n\n\n\n";
+    while (InfoMessage[x] != '\0')
+    {
+
+        setcolor(white, black);  // set to white as default
+
+
+        // this checks when we are printing "onfootmoney"
+        if (x >= 82 && x <= 94) {
+            setcolor(green, black);
+        }
+
+        cout << InfoMessage[x];
+        Sleep(30 + rand() % 30);
+        x++;
+
+        //getchar();
+        //cout << x;
+        
+    };
+
+
+    Sleep(350);
+    cout << "\n\n\n\n";
+    cout << "             ";
+    setcolor(red, black);
+    cout << "*hit ENTER*";
+    setcolor(white, black);
+
+    getchar();
+
+}
+
+// draw our main menu
+void drawMenu() {
+
+    int c = 0;
+
+    do {
+
+        c = 0;
+
+        if (isMainMenuActive == true) {
+            DisplayMainMenu();
+        }
+
+        else if (isOptionMenuActive == true) {
+            DisplayOptionsMenu();
+        }
+
+        //cout << "\n\n\n\n";
+        //std::cout << "opts value is " << counterForOptionMenu << endl;
+        //std::cout << "opts menu size " << optionSizeMinusOneForArrayReference << endl;
+
+        //std::cout << "main value is " << counterForMainMenu << endl;
+        //std::cout << "main menu size " << menuSizeMinusOneForArrayReference << endl;
+
+        switch ((c = _getch())) {
+
+        case KEY_UP:
+
+            // switch case for main menu
+            switch (isMainMenuActive) {
+
+            case true:
+                counterForMainMenu--;
+                break;
+            case false:
+                break;
+            }
+
+            // switch case for options menu
+            switch (isOptionMenuActive) {
+
+            case true:
+                counterForOptionMenu--;
+                break;
+            case false:
+                break;
+            }
+
+            break;
+
+        case KEY_DOWN:
+
+            // switch case for main menu
+            switch (isMainMenuActive) {
+
+            case true:
+                counterForMainMenu++;
+                break;
+            case false:
+                break;
+            }
+
+            // switch case for options menu
+            switch (isOptionMenuActive) {
+
+            case true:
+                counterForOptionMenu++;
+                break;
+            case false:
+                break;
+            }
+
+            break;
+
+        case KEY_LEFT:
+
+            break;
+
+        case KEY_RIGHT:
+
+            break;
+
+        case KEY_ENTER:
+
+            // if we hit 'enter' on the exit button.
+            if ((counterForMainMenu) == (menuSizeMinusOneForArrayReference)) {
+
+                exit(0);
+            }
+
+            // if we hit 'enter' on the PLAY button
+           else if ((counterForMainMenu == 0) && (isMainMenuActive == true)) {
+
+                cout << "yeah it works";
+
+                isOptionMenuActive = false;
+                isMainMenuActive = false;
+                counterForMainMenu = 0;
+                counterForOptionMenu = 0;
+                gameActive = true;
+
+            }
+
+            // we reset so we dont hit back in this else case. checks for "settings" hit
+            else if (counterForMainMenu == 2) {
+
+                isOptionMenuActive = true;
+                isMainMenuActive = false;
+                counterForMainMenu = 0;
+                counterForOptionMenu = 0;
+            }
+
+            // we check if we hit the "go back" button on the options menu
+            else if ((counterForOptionMenu) == (optionSizeMinusOneForArrayReference)) {
+
+                isOptionMenuActive = false;
+                isMainMenuActive = true;
+                counterForMainMenu = 0;
+                counterForOptionMenu = 0;
+
+            }
+
+            // check if we hit the "cursor" button
+            else if (counterForOptionMenu == 0 && isOptionMenuActive == true) {
+
+                switch (cursorOff) {
+                case true:
+                    cursorOff = false;
+                    showTheCursor();
+
+                    break;
+                case false:
+                    cursorOff = true;
+                    hideTheCursor();
+                    break;
+                }
+            }
+
+            else if (counterForOptionMenu == 2) {
+
+                removeScrollBar();
+                setWindowSize320x420();
+                disableMouseHighlighting();
+                disableMaximize();
+            }
+
+            else if (counterForOptionMenu == 3) {
+                showInfo();
+            }
+
+      
+
+
+            break;
+
+        case KEY_ESCAPE:
+            break;
+
+        case KEY_DOT:
+
+            // run command prompt
+            runGameFeed();
+
+            exit(0);
+            break;
+
+        default:
+            break;
+
+        }
+
+    } while ((gameOver == false) && (gameActive == false));
+
+}

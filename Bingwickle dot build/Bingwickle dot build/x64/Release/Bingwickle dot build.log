@@ -1,0 +1,47 @@
+﻿  audio.cpp
+  commandLPrmpt.cpp
+  globals.cpp
+  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(106,36): error C2039: 'filesystem': is not a member of 'std'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\fstream(20,1):
+  see declaration of 'std'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(106,36): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(107,41): error C2039: 'filesystem': is not a member of 'std'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\fstream(20,1):
+  see declaration of 'std'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(107,41): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(110,7): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(110,19): error C2039: 'path': is not a member of 'std'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\fstream(20,1):
+  see declaration of 'std'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(110,19): error C2065: 'path': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(110,24): error C2146: syntax error: missing ';' before identifier 'bingwicklePath'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(110,24): error C2065: 'bingwicklePath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(113,29): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(113,41): error C2039: 'exists': is not a member of 'std'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\fstream(20,1):
+  see declaration of 'std'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(113,48): error C2065: 'bingwicklePath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(113,41): error C3861: 'exists': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(127,111): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(127,123): error C2039: 'is_directory': is not a member of 'std'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\fstream(20,1):
+  see declaration of 'std'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(127,136): error C2065: 'bingwicklePath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(127,123): error C3861: 'is_directory': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(143,3): error C2653: 'ourDirectoryToV1': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(143,21): error C3861: 'create_directories': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(144,3): error C2653: 'ourDirectoryToTickets': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(144,26): error C3861: 'create_directories': identifier not found
+  mainMenu.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+  playBing.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+  setConsole.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.

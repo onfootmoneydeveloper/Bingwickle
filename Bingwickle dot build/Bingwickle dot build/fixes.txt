@@ -1,0 +1,16 @@
+
+[fix list]
+
+** all bugs and fixes during dev**
+
+- remove whitespace gap on the right side. -- fixed (workaround!)
+
+- change where console window opens. -- fixed
+
+- change border colour to black. 
+
+- allow audio to work on release build.
+
+- upon release, create version for 1920 x 1080 and 1366 x 768 (this will be properly tested on 1920
+screens to see if this is needed.)
+- OR, allow a resolution setting in main menu
