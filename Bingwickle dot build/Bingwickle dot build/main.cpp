@@ -155,7 +155,6 @@ void setUpUserPath() {
 
 		// since this is the first logim, here's your first login point
 
-		// test push
 
 		outfileXpTill << loginCountNumber;	 // writes the number to the file
 
