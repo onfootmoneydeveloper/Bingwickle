@@ -1,0 +1,57 @@
+			[FEATURE/CHANGE BACKLOG]
+
+
+- description text for sound
+- desctiption text for snap window
+- description text for info
+- show cursor when 'info' plays
+- short delay when moving from main/options menu
+- loading screen on 'play' (tips? exp earned?) *check references*
+- design new 'play' core system (level system)
+- design new 'play' UI
+- display the 'username' at in-game input point
+- create 5-7 commands only (simple names)
+- to leave console = "done" (subject to change)
+- update 'info' to credits
+- change/update credits
+- dont show cursor on ANY menu pages, only in-game and console
+- on/off colour/symbol indicators for (cursor/sound)
+- when you hit "snap window", show "snapped!" text
+- change snap window name?
+- when you add a ref, send it to text file
+- when you add another ref, send to the same text file, stack both refs
+- when you add the same text file, if there's a duplicate, flag and reject
+- the ref to text file is "ref/date/time"
+- each ref entered adds to the daily ticket counter
+- create a function that adds your daily ticket amount to your total (merge)
+- put a warning on 'exit' if your daily ticket count is 1 or more
+- always show 'daily ticket count' / (or "tickets") on MM if you have any
+- create a new 'ticket_date_here' file for EACH day
+
+
+
+				[AUDIO]
+
+- sound effect when snapped
+- sound effect when you 'play'
+- play sound effect for exp pop ups
+
+				[COMMANDS]
+
+- merge (add daily to total)
+- done (exits out of ANY window)
+- play?
+- stats?
+- clear?
+
+
+
+
+
+
+
+
+
+
+
+
