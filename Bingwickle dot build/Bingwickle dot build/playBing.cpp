@@ -37,7 +37,10 @@ void play() {
 		std::cin >> input;
 
 		if (input == "done") {
-			gameActive = false;
+
+			gameActive = false;			// not in-game
+			isMainMenuActive = true;	// switch on menu
+
 			break;
 		}
 

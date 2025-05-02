@@ -786,13 +786,11 @@ void drawMenu() {
             // if we hit 'enter' on the PLAY button
            else if ((counterForMainMenu == 0) && (isMainMenuActive == true)) {
 
-                cout << "yeah it works";
-
                 isOptionMenuActive = false;
                 isMainMenuActive = false;
                 counterForMainMenu = 0;
                 counterForOptionMenu = 0;
-                gameActive = true;
+                gameActive = true; // now in-game
 
             }
 

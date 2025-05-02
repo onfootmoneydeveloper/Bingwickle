@@ -309,35 +309,33 @@ int main() {
 
 
 	playStartUpSound();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
-	startUpScreen();			// load starting screen. duh.                               //(REMOVE to skip load)
+	//startUpScreen();			// load starting screen. duh.                               //(REMOVE to skip load)
 
 
-	getUsername();																			//(REMOVE to skip load)
-	setUpUserPath();																		//(REMOVE to skip load)
+	//getUsername();																			//(REMOVE to skip load)
+	//setUpUserPath();																		//(REMOVE to skip load)
 	incrementLoginCount();	// <--- whenever you login, get +1
 
-
-
-	// do we need a loop here?
-
+	// menu/game loop
 
 	do {
 		
-		if (gameActive == false) {
+		if (gameActive == false) {	// if we're not in-game, show main menu
 
-			DisplayDefaultMenu();  // called once.													//(REMOVE to skip load)
+			DisplayDefaultMenu();
 			drawMenu();
 
 			system("cls");
 
-			if (gameActive == true) {
-				play();
-			}
+		}
+
+		else if (gameActive == true) {	// if we're in game, show the game
+			
+			play();
 
 		}
 
 	} while (1);
-
 
 	
 	system("pause");		// <--- for testing
