@@ -372,9 +372,9 @@ void DisplayMainMenu() {
         */
 
         std::cout << "\n\n";
-        std::cout << "        ";
+        std::cout << "      ";
         setcolor(yellow, black);
-        std::cout << "*save ur progress*" << endl;
+        std::cout << "let's use commands!" << endl;
         setcolor(white, black);
         std::cout << endl;
 
@@ -446,7 +446,7 @@ void DisplayMainMenu() {
         std::cout << "\n\n";
         std::cout << "          ";
         setcolor(red, black);
-        std::cout << "*make sure u nudge*" << endl;
+        std::cout << "until next time?" << endl;
         setcolor(white, black);
         std::cout << endl;
 
@@ -740,8 +740,9 @@ void drawMenu() {
 
 
 
-                cout << "value: " << counterForMainMenu;
-                std::this_thread::sleep_for(chrono::seconds(1));
+                //cout << "value: " << counterForMainMenu;
+                //std::this_thread::sleep_for(chrono::seconds(1));
+
                 break;
             case false:
                 break;
@@ -776,8 +777,9 @@ void drawMenu() {
                 }
 
 
-                cout << "value: " << counterForMainMenu;
-                std::this_thread::sleep_for(chrono::seconds(1));
+                //cout << "value: " << counterForMainMenu;
+                //std::this_thread::sleep_for(chrono::seconds(1));
+
                 break;
             case false:
                 break;

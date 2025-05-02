@@ -18,7 +18,8 @@ void playTestToExit() {
 
 void play() {
 
-	system("cls"); 
+	system("cls");
+	std::this_thread::sleep_for(chrono::seconds(1));
 
 	std::string input;
 	int number;

@@ -645,7 +645,7 @@ void runGameFeed() {
 	pushSpace();
 	DefaultCmdsPromptToFeed();  // show initial tip for bw_cmd
 
-	while (consoleLoopOver == false) {
+	while (consoleActive == true) {
 
 		setcolor(white, black);
 
