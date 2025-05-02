@@ -725,7 +725,23 @@ void drawMenu() {
             switch (isMainMenuActive) {
 
             case true:
-                counterForMainMenu--;
+
+                if (counterForMainMenu == 0)
+                {
+                    counterForMainMenu = 0;
+                }
+
+                else {
+
+                    counterForMainMenu--;
+                }
+
+
+
+
+
+                cout << "value: " << counterForMainMenu;
+                std::this_thread::sleep_for(chrono::seconds(1));
                 break;
             case false:
                 break;
@@ -749,7 +765,19 @@ void drawMenu() {
             switch (isMainMenuActive) {
 
             case true:
-                counterForMainMenu++;
+                
+
+                if (counterForMainMenu == 3) {
+                    counterForMainMenu = 3;
+                }
+
+                else {
+                    counterForMainMenu++;
+                }
+
+
+                cout << "value: " << counterForMainMenu;
+                std::this_thread::sleep_for(chrono::seconds(1));
                 break;
             case false:
                 break;
@@ -784,7 +812,7 @@ void drawMenu() {
             }
 
             // if we hit 'enter' on the PLAY button
-           else if ((counterForMainMenu == 0) && (isMainMenuActive == true)) {
+            else if ((counterForMainMenu == 0) && (isMainMenuActive == true)) {
 
                 isOptionMenuActive = false;
                 isMainMenuActive = false;
@@ -795,17 +823,17 @@ void drawMenu() {
             }
 
 
-           else if ((counterForMainMenu == 1) && (isMainMenuActive == true)) {
+            // if we hit 'CONSOLE'
+            else if ((counterForMainMenu == 1) && (isMainMenuActive == true)) {
 
                 isOptionMenuActive = false;
                 isMainMenuActive = false;
-                gameActive = false;
                 counterForMainMenu = 0;
                 counterForOptionMenu = 0;
-                // run command prompt
+                consoleActive = true; // now in console
                 runGameFeed();
-            
-           }
+
+            }
 
             // we reset so we dont hit back in this else case. checks for "settings" hit
             else if (counterForMainMenu == 2) {
@@ -853,10 +881,6 @@ void drawMenu() {
             else if (counterForOptionMenu == 3) {
                 showInfo();
             }
-
-      
-
-
             break;
 
         case KEY_ESCAPE:
@@ -870,6 +894,8 @@ void drawMenu() {
 
         }
 
-    } while ((gameOver == false) && (gameActive == false));
+    } while ((gameOver == false) && (gameActive == false) && (consoleActive == false));
+
+    
 
 }

@@ -30,3 +30,6 @@ extern bool gameOver;
 
 // for play button
 extern bool gameActive;
+
+// for console button
+extern bool consoleActive;

@@ -408,6 +408,9 @@ void GameFeedInput() {
 	// head back to main 
 	if (cmd == "bw_leave") {
 
+		consoleActive = false;
+		isMainMenuActive = true;
+
 		// 1 ** show how to exit
 		system("cls");
 		pushSpace();
@@ -673,5 +676,5 @@ void runGameFeed() {
 		system("cls");
 	}
 
-	isMainMenuActive = true;
+	
 }

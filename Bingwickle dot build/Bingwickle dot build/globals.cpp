@@ -40,3 +40,6 @@ bool gameOver = false;
 
 // this tracks the "play" button
 bool gameActive = false;
+
+// this tracks "console" button
+bool consoleActive = false;
