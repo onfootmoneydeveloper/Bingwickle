@@ -672,4 +672,6 @@ void runGameFeed() {
 
 		system("cls");
 	}
+
+	isMainMenuActive = true;
 }

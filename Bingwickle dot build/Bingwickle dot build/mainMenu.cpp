@@ -27,8 +27,8 @@
 // 5. counter, 
 // 6. active checker
 
-std::string mainMenuItem[4] = { "PLAY", "NUDGE" ,"SETTINGS", "EXIT" };
-std::string mainMenuItemSelected[4] = { "   PLAY", "   NUDGE", "   SETTINGS", "   EXIT", };
+std::string mainMenuItem[4] = { "PLAY", "CONSOLE" ,"SETTINGS", "EXIT" };
+std::string mainMenuItemSelected[4] = { "   PLAY", "   CONSOLE", "   SETTINGS", "   EXIT", };
 int mainMenuSize = end(mainMenuItem) - begin(mainMenuItem);
 int menuSizeMinusOneForArrayReference = mainMenuSize - 1;
 int counterForMainMenu = 0;
@@ -349,7 +349,7 @@ void DisplayMainMenu() {
         // ONLY USE ME ABOVE SELECTED ITEMS
 
 
-        std::cout << mainMenuItemSelected[1] << "!" << endl;
+        std::cout << mainMenuItemSelected[1] << "" << endl;  // EXCLAMATION
         std::cout << endl;
         std::cout << "                ";
         std::cout << mainMenuItem[2] << endl;
@@ -794,6 +794,19 @@ void drawMenu() {
 
             }
 
+
+           else if ((counterForMainMenu == 1) && (isMainMenuActive == true)) {
+
+                isOptionMenuActive = false;
+                isMainMenuActive = false;
+                gameActive = false;
+                counterForMainMenu = 0;
+                counterForOptionMenu = 0;
+                // run command prompt
+                runGameFeed();
+            
+           }
+
             // we reset so we dont hit back in this else case. checks for "settings" hit
             else if (counterForMainMenu == 2) {
 
@@ -850,11 +863,6 @@ void drawMenu() {
             break;
 
         case KEY_DOT:
-
-            // run command prompt
-            runGameFeed();
-
-            exit(0);
             break;
 
         default:
