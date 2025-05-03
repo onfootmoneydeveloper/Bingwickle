@@ -305,17 +305,19 @@ void incrementLoginCount() {
 
 int main() {
 
-	playStartUpSound();
+	playStartUpSound(); 
 
 	generalWindowSetup();		// run initial console defaults.
 
 
 	playStartUpSound();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
-	//startUpScreen();			// load starting screen. duh.                               //(REMOVE to skip load)
 
 
-	//getUsername();																			//(REMOVE to skip load)
-	//setUpUserPath();																		//(REMOVE to skip load)
+	startUpScreen();			// load starting screen. duh.                               //(REMOVE to skip load)
+	getUsername();																			//(REMOVE to skip load)
+	setUpUserPath();																		//(REMOVE to skip load)
+
+
 	incrementLoginCount();	// <--- whenever you login, get +1
 
 	// menu/game loop

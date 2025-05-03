@@ -6,7 +6,7 @@
 > desctiption text for snap window
 > description text for info
 > show cursor when 'info' plays
-> short delay when moving from main/options menu
+*> short delay when moving from main/options menu
 > loading screen on 'play' (tips? exp earned?) *check references*
 > design new 'play' core system (level system)
 > random bonus exp when entering a ref
@@ -38,6 +38,7 @@
 > sound effect when snapped
 > sound effect when you 'play'
 > play sound effect for exp pop ups
+> play sound for daily log in point
 
 
 [COMMANDS]

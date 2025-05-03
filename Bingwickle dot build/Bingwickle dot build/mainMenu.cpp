@@ -707,6 +707,7 @@ void drawMenu() {
         }
 
         else if (isOptionMenuActive == true) {
+
             DisplayOptionsMenu();
         }
 
@@ -844,6 +845,8 @@ void drawMenu() {
                 isMainMenuActive = false;
                 counterForMainMenu = 0;
                 counterForOptionMenu = 0;
+                system("cls");
+                std::this_thread::sleep_for(chrono::seconds(1)); // menu pause
             }
 
             // we check if we hit the "go back" button on the options menu
@@ -853,6 +856,8 @@ void drawMenu() {
                 isMainMenuActive = true;
                 counterForMainMenu = 0;
                 counterForOptionMenu = 0;
+                system("cls");
+                std::this_thread::sleep_for(chrono::seconds(1)); // menu pause
 
             }
 
