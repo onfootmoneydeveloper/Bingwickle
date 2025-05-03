@@ -43,3 +43,6 @@ bool gameActive = false;
 
 // this tracks "console" button
 bool consoleActive = false;
+
+// toggles sound
+bool soundOn = true;

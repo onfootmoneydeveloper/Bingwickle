@@ -33,3 +33,6 @@ extern bool gameActive;
 
 // for console button
 extern bool consoleActive;
+
+// toggles sound
+extern bool soundOn;

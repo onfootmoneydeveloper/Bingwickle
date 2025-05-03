@@ -1,8 +1,4 @@
 
-[STANDING]
-
-        ( 0 / 32 )
-
 [FEATURE/CHANGE BACKLOG]
 
 

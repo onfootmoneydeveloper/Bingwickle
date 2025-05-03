@@ -6,6 +6,9 @@
 // play start out
 void playStartUpSound();
 
+// mute sound
+void muteSound();
+
 
 
 

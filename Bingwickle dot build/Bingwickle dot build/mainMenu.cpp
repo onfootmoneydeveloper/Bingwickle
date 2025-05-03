@@ -872,6 +872,22 @@ void drawMenu() {
                 }
             }
 
+            // check if we hit "SOUND" button (off)
+            else if (counterForOptionMenu == 1 && isOptionMenuActive == true && soundOn == true) {
+
+                muteSound();
+                soundOn = false;
+            
+            }
+
+            // check if we hit "SOUND" button (on)
+            else if (counterForOptionMenu == 1 && isOptionMenuActive == true && soundOn == false) {
+
+                playStartUpSound();
+                soundOn = true;
+
+            }
+
             else if (counterForOptionMenu == 2) {
 
                 removeScrollBar();

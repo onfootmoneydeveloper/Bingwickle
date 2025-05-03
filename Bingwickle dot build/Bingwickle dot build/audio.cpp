@@ -8,10 +8,18 @@
 #pragma comment(lib, "winmm.lib") 
 
 #include <Windows.h>
+#include <mmsystem.h>
 #include "audio.h"
 
 // play our initial start up sound.
 void playStartUpSound() {
 
-	//PlaySound(TEXT("bingwickleJingle.wav"), NULL, SND_FILENAME | SND_ASYNC);
+	PlaySound(TEXT("issues.wav"), NULL, SND_FILENAME | SND_ASYNC);
+}
+
+// stop the sound
+void muteSound() {
+
+	PlaySound(NULL, 0, 0);
+
 }

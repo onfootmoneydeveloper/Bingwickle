@@ -305,6 +305,8 @@ void incrementLoginCount() {
 
 int main() {
 
+	playStartUpSound();
+
 	generalWindowSetup();		// run initial console defaults.
 
 
