@@ -29,7 +29,7 @@
 > put a warning on 'exit' if your daily ticket count is 1 or more
 > always show 'daily ticket count' / (or "tickets") on MM if you have any
 -> create a new 'ticket_date_here' file for EACH day
-> ammend so you can only log on AFTER 9am (make this clear)
+-> ammend so you can only log on AFTER 9am (make this clear)
 > info selected should be "info?"
 
 
