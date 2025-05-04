@@ -242,18 +242,15 @@ void setUpUserPath() {
 			system("cls");
 
 			cout << "\n\n\n\n\n\n\n\n\n";
-			cout << "           ";
+			cout << "        ";
 			setcolor(white, black);				// <-- set colour
-			cout << "Sorry, not yet!" << endl;
-			cout << "         ";
-			cout << "Come back at";
+			cout << "Work starts at ";
 			setcolor(red, black);
-			cout << " 9:00AM";
+			cout << "9:00AM";
 			setcolor(white, black);
 			cout << "." << endl;
 			std::this_thread::sleep_for(chrono::seconds(6));
 			system("cls"); // clear our screen
-			std::this_thread::sleep_for(chrono::seconds(1));
 			exit(0);
 		}
 
