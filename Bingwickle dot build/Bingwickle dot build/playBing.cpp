@@ -87,7 +87,9 @@ void play() {
 	std::cout << "   Reference:\n";
 
 	while (true) {
-		std::cout << "> ";
+
+		
+		std::cout << "   Users\\" << globalUsername << ">  ";
 		std::cin >> input;
 
 		if (input == "done") {

@@ -249,7 +249,7 @@ void setUpUserPath() {
 			cout << "9:00AM";
 			setcolor(white, black);
 			cout << "." << endl;
-			std::this_thread::sleep_for(chrono::seconds(6));
+			getchar();
 			system("cls"); // clear our screen
 			exit(0);
 		}

@@ -35,8 +35,8 @@ int counterForMainMenu = 0;
 bool isMainMenuActive = true;
 
 
-std::string optionMenuItem[5] = { "CURSOR ", "SOUND", "SNAP WINDOW" ,"INFO", "GO BACK" };
-std::string optionMenuItemSelected[5] = { "   CURSOR ", "   SOUND", "   SNAP WINDOW", "   INFO", "   GO BACK" };
+std::string optionMenuItem[5] = { "CURSOR ", "SOUND", "SNAP WINDOW" ,"CREDITS", "GO BACK" };
+std::string optionMenuItemSelected[5] = { "   CURSOR ", "   SOUND", "   SNAP WINDOW", "   CREDITS", "   GO BACK" };
 int optionMenuSize = end(optionMenuItem) - begin(optionMenuItem);
 int optionSizeMinusOneForArrayReference = optionMenuSize - 1;
 int counterForOptionMenu = 0;

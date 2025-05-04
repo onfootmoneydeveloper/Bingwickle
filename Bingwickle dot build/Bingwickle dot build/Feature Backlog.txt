@@ -11,7 +11,7 @@
 > design new 'play' core system (level system)
 > random bonus exp when entering a ref
 > design new 'play' UI
-> display the 'username' at in-game input point
+-> display the 'username' at in-game input point
 > create 5-7 commands only (simple names)
 > to leave console = "done" (subject to change)
 > update 'info' to credits
@@ -30,7 +30,6 @@
 > always show 'daily ticket count' / (or "tickets") on MM if you have any
 -> create a new 'ticket_date_here' file for EACH day
 -> ammend so you can only log on AFTER 9am (make this clear)
-> info selected should be "info?"
 
 
 [AUDIO]
