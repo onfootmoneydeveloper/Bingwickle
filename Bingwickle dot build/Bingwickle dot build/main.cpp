@@ -306,8 +306,8 @@ int main() {
 
 
 	//startUpScreen();			// load starting screen. duh.                               //(REMOVE to skip load)
-	getUsername();																			//(REMOVE to skip load)
-	setUpUserPath();																		//(REMOVE to skip load)
+	//getUsername();																			//(REMOVE to skip load)
+	//setUpUserPath();																		//(REMOVE to skip load)
 
 
 	incrementLoginCount();	// <--- whenever you login, get +1

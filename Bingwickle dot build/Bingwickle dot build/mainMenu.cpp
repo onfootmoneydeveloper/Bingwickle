@@ -61,6 +61,54 @@ void pushOptionsMenuToCentre() {
     std::cout << "\n\n\n\n\n\n";
 }
 
+// toggle for on/off buttons for cursor
+void cursorToggleIcon() {
+    
+    if (cursorOff == false) {
+
+        std::cout << optionMenuItemSelected[0] << " (";
+        setcolor(green, black);
+        cout << "-";
+        setcolor(white, black); 
+        cout << ")" << endl;
+
+    }
+
+    else {
+
+        std::cout << optionMenuItemSelected[0] << " (";
+        setcolor(red, black);
+        cout << "x";
+        setcolor(white, black);
+        cout << ")" << endl;
+
+    }
+}
+
+// toggle for on/off buttons for sound
+void soundToggleIcon() {
+
+    if (soundOn == true) {
+
+        std::cout << optionMenuItemSelected[1] << " (";
+        setcolor(green, black);
+        cout << "-";
+        setcolor(white, black);
+        cout << ")" << endl;
+
+    }
+
+    else {
+
+        std::cout << optionMenuItemSelected[1] << " (";
+        setcolor(red, black);
+        cout << "x";
+        setcolor(white, black);
+        cout << ")" << endl;
+
+    }
+}
+
 // this is the default screen that we only call once.
 void DisplayDefaultMenu() {
 
@@ -508,7 +556,8 @@ void DisplayOptionsMenu() {
         OptionMenuColor();
         // ONLY USE ME ABOVE SELECTED ITEMS
 
-        std::cout << optionMenuItemSelected[0] << endl;
+        cursorToggleIcon();
+        //std::cout << optionMenuItemSelected[0] << endl;
         std::cout << endl;
         std::cout << "              ";
         std::cout << optionMenuItem[1] << endl;
@@ -537,8 +586,8 @@ void DisplayOptionsMenu() {
         OptionMenuColor();
         // ONLY USE ME ABOVE SELECTED ITEMS
 
-
-        std::cout << optionMenuItemSelected[1] << endl;
+        soundToggleIcon();
+        //std::cout << optionMenuItemSelected[1] << " (-)" << endl;
         std::cout << endl;
         std::cout << "              ";
         std::cout << optionMenuItem[2] << endl;
