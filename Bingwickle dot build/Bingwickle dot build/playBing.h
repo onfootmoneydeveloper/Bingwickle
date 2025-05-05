@@ -30,3 +30,6 @@ void playTestToExit();
 
 // play func
 void play();
+
+// save ticket locally
+void saveTicket();

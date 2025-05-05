@@ -14,7 +14,7 @@
 // play our initial start up sound.
 void playStartUpSound() {
 
-	PlaySound(TEXT("issues.wav"), NULL, SND_FILENAME | SND_ASYNC);
+	//PlaySound(TEXT("issues.wav"), NULL, SND_FILENAME | SND_ASYNC);
 }
 
 // stop the sound

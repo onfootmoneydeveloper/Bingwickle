@@ -4,6 +4,9 @@
 #include <string>
 #include <filesystem>
 #include <fstream>
+#include <vector>	
+#include <chrono>
+#include <ctime>
 
 // calling headers
 #include "setConsole.h"
@@ -12,51 +15,110 @@
 #include "mainMenu.h"
 #include "commandLPrmpt.h"
 
+int number;
+std::string input;
+
 void playTestToExit() {
 	exit(0);
 }
 
+void saveTicket() {
+	// Get current date in YYYY-MM-DD format
+
+	auto now = std::chrono::system_clock::now();
+	std::time_t t = std::chrono::system_clock::to_time_t(now);
+	std::tm local_tm;
+	localtime_s(&local_tm, &t);
+
+	char dateBuffer[11];
+	std::strftime(dateBuffer, sizeof(dateBuffer), "%Y-%m-%d", &local_tm);
+	std::string currentDate(dateBuffer);
+
+	// Construct file path
+	std::string baseDir = "C:\\Bingwickle\\Users\\" + globalUsername + "\\tickets\\";
+	std::string fileName = "ticket_list_" + currentDate + ".txt";
+	std::string fullPath = baseDir + fileName;
+
+	// Create directory if it doesn't exist
+	std::filesystem::create_directories(baseDir);
+
+	// Read existing contents
+	std::ifstream inFile(fullPath);
+	std::string line;
+	std::vector<std::string> lines;
+	bool isDuplicate = false;
+
+	while (std::getline(inFile, line)) {
+		if (line == input) {
+			isDuplicate = true;
+			break;
+		}
+		lines.push_back(line);
+	}
+	inFile.close();
+
+	if (isDuplicate) {
+		std::cout << "Duplicate ticket: #" << input << "\n";
+		return;
+	}
+
+	// Insert new ticket at the top
+	lines.insert(lines.begin(), input);
+
+	// Write back to file
+	std::ofstream outFile(fullPath, std::ios::trunc);
+	for (const auto& l : lines) {
+		outFile << l << "\n";
+	}
+	outFile.close();
+
+	std::cout << "Ticket " << input << " was saved.\n";
+}
+
 void play() {
-
 	system("cls");
-	std::this_thread::sleep_for(chrono::seconds(1));
-
-	std::string input;
-	int number;
+	std::this_thread::sleep_for(std::chrono::seconds(1));
 
 
-
-	cout << "\n\n\n\n";
+	std::cout << "\n\n\n\n";
 	COORD pos = { 3, 20 };
 	SetConsoleCursorPosition(hConsole, pos);
 
-	cout << "   ";
-	std::cout << "Reference:\n";
+	std::cout << "   Reference:\n";
 
 	while (true) {
 		std::cout << "> ";
 		std::cin >> input;
 
 		if (input == "done") {
-
 			gameActive = false;			// not in-game
 			isMainMenuActive = true;	// switch on menu
-
 			break;
 		}
+		
+		if (input.length() == 7 && std::all_of(input.begin(), input.end(), ::isdigit)) {
+			try {
+				number = std::stoi(input);
+				std::cout << "saved!: " << number << std::endl;
 
-		try {
-			number = std::stoi(input);
-			std::cout << "You entered: " << number << std::endl;
-			// Do something with 'number' here
+				saveTicket();
+				// Do something with 'number' here
+			}
+			catch (std::exception&) {
+				std::cout << "Weird...try again?\n";
+			}
 		}
-		catch (std::invalid_argument&) {
-			std::cout << "Numbers only, unless you're 'done'.\n";
+		else {
+			std::cout << "Invalid reference.\n";
 		}
 	}
 
 	std::cout << "Exiting play function.\n";
 }
+
+
+
+
 
 
 // when yo hit play - GET all stats, display stats

@@ -236,11 +236,6 @@ void setUpUserPath() {
 		}
 
 
-
-
-
-
-
 		// NOT PAST 9:00AM
 		else {
 
@@ -314,8 +309,8 @@ int main() {
 
 
 	//startUpScreen();			// load starting screen. duh.                               //(REMOVE to skip load)
-	//getUsername();																			//(REMOVE to skip load)
-	//setUpUserPath();																		//(REMOVE to skip load)
+	getUsername();																			//(REMOVE to skip load)
+	setUpUserPath();																		//(REMOVE to skip load)
 
 
 	incrementLoginCount();	// <--- whenever you login, get +1
@@ -334,6 +329,7 @@ int main() {
 		else if (gameActive == true) {	// if we're in game, show the game
 
 			play();
+			saveTicket();
 
 		}
 

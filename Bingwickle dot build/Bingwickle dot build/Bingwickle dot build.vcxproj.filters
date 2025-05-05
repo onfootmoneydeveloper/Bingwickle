@@ -77,5 +77,8 @@
     <Text Include="fixes.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="Feature Backlog.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

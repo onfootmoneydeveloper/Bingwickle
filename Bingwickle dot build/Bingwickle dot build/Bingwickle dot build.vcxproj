@@ -155,6 +155,7 @@
     <Image Include="..\..\icons from desktop\bingicon100.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Feature Backlog.txt" />
     <Text Include="fixes.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

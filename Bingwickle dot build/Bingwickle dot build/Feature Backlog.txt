@@ -6,7 +6,7 @@
 > desctiption text for snap window
 > description text for info
 > show cursor when 'info' plays
-*> short delay when moving from main/options menu
+-> short delay when moving from main/options menu
 > loading screen on 'play' (tips? exp earned?) *check references*
 > design new 'play' core system (level system)
 > random bonus exp when entering a ref
@@ -20,15 +20,15 @@
 > on/off colour/symbol indicators for (cursor/sound) (x) (-) (red, green)
 > when you hit "snap window", show "snapped!" text
 > change snap window name?
-> when you add a ref, send it to text file
-> when you add another ref, send to the same text file, stack both refs
-> when you add the same text file, if there's a duplicate, flag and reject
-> the ref to text file is "ref/date/time"
+-> when you add a ref, send it to text file
+-> when you add another ref, send to the same text file, stack both refs
+-> when you add the same text file, if there's a duplicate, flag and reject
+-> the ref to text file is "ref/date/time" (changed to ticket_list_date)
 > each ref entered adds to the daily ticket counter
 > create a function that adds your daily ticket amount to your total (merge)
 > put a warning on 'exit' if your daily ticket count is 1 or more
 > always show 'daily ticket count' / (or "tickets") on MM if you have any
-> create a new 'ticket_date_here' file for EACH day
+-> create a new 'ticket_date_here' file for EACH day
 > ammend so you can only log on AFTER 9am (make this clear)
 > info selected should be "info?"
 
