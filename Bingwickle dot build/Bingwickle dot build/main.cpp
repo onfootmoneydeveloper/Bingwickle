@@ -310,7 +310,7 @@ int main() {
 	//setUpUserPath();																		//(REMOVE to skip load)
 
 
-	incrementLoginCount();	// <--- whenever you login, get +1
+	//incrementLoginCount();	// <--- whenever you login, get +1
 
 	// menu/game loop
 

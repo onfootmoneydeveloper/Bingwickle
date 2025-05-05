@@ -14,6 +14,7 @@
 
 std::string mainMenuItem[];
 std::string mainMenuItemSelected[];
+std::string songList[];
 extern int mainMenuSize;
 extern int menuSizeMinusOneForArrayReference;
 extern int counterForMainMenu;

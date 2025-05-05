@@ -76,11 +76,18 @@ void saveTicket() {
 }
 
 void play() {
+	
 	system("cls");
 	std::this_thread::sleep_for(std::chrono::seconds(1));
-
+	
 
 	std::cout << "\n\n\n\n";
+
+	// if the cursor in on, show it in-game
+	if (cursorOff == false) {
+		showTheCursor();
+	}
+	
 	COORD pos = { 3, 20 };
 	SetConsoleCursorPosition(hConsole, pos);
 
@@ -93,6 +100,7 @@ void play() {
 		std::cin >> input;
 
 		if (input == "done") {
+			hideTheCursor();
 			gameActive = false;			// not in-game
 			isMainMenuActive = true;	// switch on menu
 			break;

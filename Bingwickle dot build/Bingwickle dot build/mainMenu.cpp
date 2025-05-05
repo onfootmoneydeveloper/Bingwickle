@@ -29,6 +29,7 @@
 
 std::string mainMenuItem[4] = { "PLAY", "CONSOLE" ,"SETTINGS", "EXIT" };
 std::string mainMenuItemSelected[4] = { "   PLAY", "   CONSOLE", "   SETTINGS", "   EXIT", };
+std::string songList[5] = { "SLAs?", "", "", "", "", };
 int mainMenuSize = end(mainMenuItem) - begin(mainMenuItem);
 int menuSizeMinusOneForArrayReference = mainMenuSize - 1;
 int counterForMainMenu = 0;
@@ -546,7 +547,7 @@ void DisplayOptionsMenu() {
 
         // **each case is an indication of which location we are in the ARRAY. **
 
-    case 0:
+    case 0: // CURSOR SELECTED
 
         system("cls");  // clear console.
         pushOptionsMenuToCentre();
@@ -573,7 +574,7 @@ void DisplayOptionsMenu() {
 
         break;
 
-    case 1:
+    case 1: // SOUND SELECTED
 
         system("cls");
         pushOptionsMenuToCentre();
@@ -597,6 +598,18 @@ void DisplayOptionsMenu() {
         std::cout << endl;
         std::cout << "              ";
         std::cout << optionMenuItem[4] << endl;
+
+
+        // SOUND DESCRIPTION : NOW PLAYING
+        if (soundOn == true) {
+            std::cout << "\n\n";
+            std::cout << "      ";
+            setcolor(yellow, black);
+            std::cout << "now playing: " << songList[0] << endl;
+            setcolor(white, black);
+            std::cout << endl;
+        }
+        
 
         break;
 
@@ -916,7 +929,7 @@ void drawMenu() {
                 switch (cursorOff) {
                 case true:
                     cursorOff = false;
-                    showTheCursor();
+                    hideTheCursor();
 
                     break;
                 case false:
@@ -953,6 +966,17 @@ void drawMenu() {
             else if (counterForOptionMenu == 3) {
                 showInfo();
             }
+
+
+            // to stop showing the cursor in the menu
+            if (isOptionMenuActive == true && isMainMenuActive == false) {
+                hideTheCursor();
+                if (isOptionMenuActive == false && isMainMenuActive == true) {
+                    hideTheCursor();
+
+                }
+            }
+
             break;
 
         case KEY_ESCAPE:
