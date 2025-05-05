@@ -142,7 +142,7 @@ void removeScrollBar() {
 		); */
 }
 
-// setting window size
+// setting window size (CURRENTLY USED)
 void setWindowSize320x420() {
 
 	HWND console = GetConsoleWindow();
@@ -156,6 +156,46 @@ void setWindowSize320x420() {
 	// lock console window to size
 	SetWindowLong(consoleWindow, GWL_STYLE,
 		GetWindowLong(consoleWindow, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX);
+
+}
+
+// snap animation 
+void playSnapAnimation() {
+
+	HWND console = GetConsoleWindow();
+	HWND consoleWindow = GetConsoleWindow(); // same as above, could just use one
+	RECT screen;
+	GetWindowRect(GetDesktopWindow(), &screen); // get screen size
+
+	const int windowWidth = 320;
+	const int windowHeight = 410;
+
+	// Final centered position
+	int centerX = (screen.right - windowWidth) / 2;
+	int centerY = (screen.bottom - windowHeight) / 2;
+
+	// Shake: oscillate side-to-side around centerX
+	const int shakeDistance = 10;
+	const int shakeCount = 6;
+	const int shakeDelayMs = 30;
+
+	for (int i = 0; i < shakeCount; ++i) {
+		int offset = (i % 2 == 0) ? -shakeDistance : shakeDistance;
+		MoveWindow(console, centerX + offset, centerY, windowWidth, windowHeight, TRUE);
+		std::this_thread::sleep_for(std::chrono::milliseconds(shakeDelayMs));
+	}
+
+	// Snap to center
+	MoveWindow(console, centerX, centerY, windowWidth, windowHeight, TRUE);
+
+	// Lock window resizing
+	SetWindowLong(consoleWindow, GWL_STYLE,
+		GetWindowLong(consoleWindow, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX);
+
+	// Optional: flash background (blink effect)
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_BLUE | BACKGROUND_INTENSITY);
+	std::this_thread::sleep_for(std::chrono::milliseconds(50));
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7); // Reset to normal
 
 }
 

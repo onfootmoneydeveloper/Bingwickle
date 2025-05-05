@@ -36,3 +36,6 @@ extern bool consoleActive;
 
 // toggles sound
 extern bool soundOn;
+
+// check if snap was pressed 
+extern bool snapWasPressed;

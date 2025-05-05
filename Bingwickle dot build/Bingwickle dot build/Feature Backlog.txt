@@ -2,7 +2,7 @@
 [FEATURE/CHANGE BACKLOG]
 
 
-> description text for sound
+-> description text for sound
 > desctiption text for snap window
 > description text for info
 > show cursor when 'info' plays

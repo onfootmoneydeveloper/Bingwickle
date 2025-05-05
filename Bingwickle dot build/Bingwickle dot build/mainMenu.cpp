@@ -36,8 +36,8 @@ int counterForMainMenu = 0;
 bool isMainMenuActive = true;
 
 
-std::string optionMenuItem[5] = { "CURSOR ", "SOUND", "SNAP WINDOW" ,"CREDITS", "GO BACK" };
-std::string optionMenuItemSelected[5] = { "   CURSOR ", "   SOUND", "   SNAP WINDOW", "   CREDITS", "   GO BACK" };
+std::string optionMenuItem[5] = { "CURSOR ", "SOUND", "SNAP" ,"CREDITS", "GO BACK" };
+std::string optionMenuItemSelected[5] = { "    CURSOR ", "    SOUND", "    SNAP", "    CREDITS", "    GO BACK" };
 int optionMenuSize = end(optionMenuItem) - begin(optionMenuItem);
 int optionSizeMinusOneForArrayReference = optionMenuSize - 1;
 int counterForOptionMenu = 0;
@@ -69,9 +69,9 @@ void cursorToggleIcon() {
 
         std::cout << optionMenuItemSelected[0] << " (";
         setcolor(green, black);
-        cout << "-";
+        std::cout << "-";
         setcolor(white, black); 
-        cout << ")" << endl;
+        std::cout << ")" << endl;
 
     }
 
@@ -79,9 +79,9 @@ void cursorToggleIcon() {
 
         std::cout << optionMenuItemSelected[0] << " (";
         setcolor(red, black);
-        cout << "x";
+        std::cout << "x";
         setcolor(white, black);
-        cout << ")" << endl;
+        std::cout << ")" << endl;
 
     }
 }
@@ -93,9 +93,9 @@ void soundToggleIcon() {
 
         std::cout << optionMenuItemSelected[1] << " (";
         setcolor(green, black);
-        cout << "-";
+        std::cout << "-";
         setcolor(white, black);
-        cout << ")" << endl;
+        std::cout << ")" << endl;
 
     }
 
@@ -103,12 +103,13 @@ void soundToggleIcon() {
 
         std::cout << optionMenuItemSelected[1] << " (";
         setcolor(red, black);
-        cout << "x";
+        std::cout << "x";
         setcolor(white, black);
-        cout << ")" << endl;
+        std::cout << ")" << endl;
 
     }
 }
+
 
 // this is the default screen that we only call once.
 void DisplayDefaultMenu() {
@@ -507,6 +508,17 @@ void DisplayMainMenu() {
 
 }
 
+// show if option item is currently in BETA
+void optionInBeta() {
+
+    std::cout << optionMenuItemSelected[2] << " (";
+    setcolor(yellow, black);
+    std::cout << "beta";
+    setcolor(white, black);
+    std::cout << ")" << endl;
+
+}
+
 // this is the OPTIONS MENU
 void DisplayOptionsMenu() {
 
@@ -560,16 +572,16 @@ void DisplayOptionsMenu() {
         cursorToggleIcon();
         //std::cout << optionMenuItemSelected[0] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[1] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[2] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[3] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[4] << endl;
 
         break;
@@ -578,7 +590,7 @@ void DisplayOptionsMenu() {
 
         system("cls");
         pushOptionsMenuToCentre();
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[0] << endl;
         std::cout << endl;
 
@@ -590,13 +602,13 @@ void DisplayOptionsMenu() {
         soundToggleIcon();
         //std::cout << optionMenuItemSelected[1] << " (-)" << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[2] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[3] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[4] << endl;
 
 
@@ -613,14 +625,14 @@ void DisplayOptionsMenu() {
 
         break;
 
-    case 2:
+    case 2: // SNAP SELECTED
 
         system("cls");
         pushOptionsMenuToCentre();
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[0] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[1] << endl;
         std::cout << endl;
 
@@ -629,28 +641,44 @@ void DisplayOptionsMenu() {
         OptionMenuColor();
         // ONLY USE ME ABOVE SELECTED ITEMS
 
-
-        std::cout << optionMenuItemSelected[2] << endl;
+        optionInBeta();
+        //std::cout << optionMenuItemSelected[2] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[3] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[4] << endl;
+
+
+
+        // SNAP DES/MESSAGE
+
+
+        /*if (snapWasPressed == true) {
+
+            std::cout << "\n\n";
+            std::cout << "          ";
+            setcolor(yellow, black);
+            std::cout << "snapped!" << endl;
+            setcolor(white, black);
+            std::cout << endl;
+            snapWasPressed = false;
+        }*/
 
         break;
 
-    case 3:
+    case 3: // CREDITS SELECTED
 
         system("cls");
         pushOptionsMenuToCentre();
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[0] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[1] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[2] << endl;
         std::cout << endl;
 
@@ -662,25 +690,34 @@ void DisplayOptionsMenu() {
 
         std::cout << optionMenuItemSelected[3] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[4] << endl;
+
+        // CREDITS DESCRIPTION
+
+        std::cout << "\n\n";
+        std::cout << "            ";
+        setcolor(blue, black);
+        std::cout << "who made this?" << endl;
+        setcolor(white, black);
+        std::cout << endl;
 
         break;
 
-    case 4:
+    case 4: // GO BACK SELECTED
 
         system("cls");
         pushOptionsMenuToCentre();
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[0] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[1] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[2] << endl;
         std::cout << endl;
-        std::cout << "              ";
+        std::cout << "               ";
         std::cout << optionMenuItem[3] << endl;
         std::cout << endl;
 
@@ -722,7 +759,7 @@ void showInfo() {
     int x = 0;
 
     // center the info message
-    cout << "\n\n\n\n\n\n";
+    std::cout << "\n\n\n\n\n\n";
     while (InfoMessage[x] != '\0')
     {
 
@@ -955,14 +992,17 @@ void drawMenu() {
 
             }
 
+            // check if we hit "enter" on SNAP
             else if (counterForOptionMenu == 2) {
 
+                snapWasPressed = true;
                 removeScrollBar();
-                setWindowSize320x420();
+                playSnapAnimation();
                 disableMouseHighlighting();
                 disableMaximize();
             }
 
+            // check if we hit "enter" on CREDITS
             else if (counterForOptionMenu == 3) {
                 showInfo();
             }

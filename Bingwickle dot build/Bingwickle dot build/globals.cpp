@@ -46,3 +46,6 @@ bool consoleActive = false;
 
 // toggles sound
 bool soundOn = true;
+
+// check if snap was pressed 
+bool snapWasPressed = false;

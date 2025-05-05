@@ -62,3 +62,6 @@ void setWindowSize320x420();
 
 // setting the window size
 void setWindowSize620x920();
+
+// snap animation
+void playSnapAnimation();

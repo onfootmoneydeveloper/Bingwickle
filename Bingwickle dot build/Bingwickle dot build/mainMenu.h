@@ -64,3 +64,6 @@ void showInfo();
 
 // draw our main menu
 void drawMenu();
+
+// mark an item in Beta
+void optionInBeta();
