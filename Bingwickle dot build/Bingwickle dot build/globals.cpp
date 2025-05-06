@@ -44,8 +44,8 @@ bool gameActive = false;
 // this tracks "console" button
 bool consoleActive = false;
 
-// toggles sound
-bool soundOn = true;
-
 // check if snap was pressed 
 bool snapWasPressed = false;
+
+// check if global sound is on
+bool soundOn = true;

@@ -3,9 +3,9 @@
 
 
 -> description text for sound
-> desctiption text for snap window
-> description text for info
-> show cursor when 'info' plays
+-> desctiption text for snap window
+-> description text for credits
+-> show cursor when 'info' plays (now never shows)
 -> short delay when moving from main/options menu
 > loading screen on 'play' (tips? exp earned?) *check references*
 > design new 'play' core system (level system)
@@ -14,12 +14,12 @@
 -> display the 'username' at in-game input point
 > create 5-7 commands only (simple names)
 > to leave console = "done" (subject to change)
-> update 'info' to credits
-> change/update credits
-> dont show cursor on ANY menu pages, only in-game and console
-> on/off colour/symbol indicators for (cursor/sound) (x) (-) (red, green)
-> when you hit "snap window", show "snapped!" text
-> change snap window name?
+-> update 'info' to credits
+-> change/update credits
+-> dont show cursor on ANY menu pages, only in-game and console
+-> on/off colour/symbol indicators for (cursor/sound) (x) (-) (red, green)
+-> when you hit "snap window", show "snapped!" text (now animates instead)
+-> change snap window name?
 -> when you add a ref, send it to text file
 -> when you add another ref, send to the same text file, stack both refs
 -> when you add the same text file, if there's a duplicate, flag and reject
@@ -30,6 +30,9 @@
 > always show 'daily ticket count' / (or "tickets") on MM if you have any
 -> create a new 'ticket_date_here' file for EACH day
 -> ammend so you can only log on AFTER 9am (make this clear)
+-> pressing right/left arrow will play another song (update the "now playing") 
+> upload full OST to YT
+> a total of 5 songs for first release
 
 
 [AUDIO]

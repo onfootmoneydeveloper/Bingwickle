@@ -68,8 +68,39 @@ void startUpScreen() {
 // lets get the name of the user. 
 // the 'name' will also be used as a password. 
 // we will use this name to create a local account for the user.
-// if the 'name' is already on the system, we log in. 
+// if the 'name' is already on the system, we log in.
 // else, create new. 
+
+void iconDisplay() {
+	/*
+	makes copies from img to text
+	https://manytools.org/hacker-tools/convert-images-to-ascii-art/go/
+
+	makes text to text art
+	https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+	*/
+
+	std::string icon =	"........................."
+						"........................."
+						"....///.%%//////..///...."
+						"....%//////////.//////..."
+						"....%////////////////...."
+						".....****************...."
+						"....***//////**////***..."
+						".....****************...."
+						".....%%%**********%%%...."
+						".........................";
+
+	const int width = 25;
+
+	for (size_t i = 0; i < icon.length(); i += width) {
+		std::cout << icon.substr(i, width) << '\n';
+	}
+
+	std::cin.get(); // waits for key press
+}
+
+
 void getUsername() {
 
 	//showTheCursor(); // enable the cursor for this moment.
@@ -297,12 +328,13 @@ void incrementLoginCount() {
 
 int main() {
 
-	playStartUpSound(); 
+	
+
+	playSong0(); 
 
 	generalWindowSetup();		// run initial console defaults.
 
-
-	playStartUpSound();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
+	playSong0();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
 
 
 	//startUpScreen();			// load starting screen. duh.                               //(REMOVE to skip load)

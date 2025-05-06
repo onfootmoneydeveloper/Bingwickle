@@ -29,7 +29,10 @@
 
 std::string mainMenuItem[4] = { "PLAY", "CONSOLE" ,"SETTINGS", "EXIT" };
 std::string mainMenuItemSelected[4] = { "   PLAY", "   CONSOLE", "   SETTINGS", "   EXIT", };
-std::string songList[5] = { "SLAs?", "", "", "", "", };
+
+// song list
+std::string songList[5] = { "SLAs?", "Morning", "", "", "", };
+
 int mainMenuSize = end(mainMenuItem) - begin(mainMenuItem);
 int menuSizeMinusOneForArrayReference = mainMenuSize - 1;
 int counterForMainMenu = 0;
@@ -613,11 +616,20 @@ void DisplayOptionsMenu() {
 
 
         // SOUND DESCRIPTION : NOW PLAYING
-        if (soundOn == true) {
+        if ((isSLAsOn == true) && (isDebriefOn == false)) {
             std::cout << "\n\n";
             std::cout << "      ";
             setcolor(yellow, black);
-            std::cout << "now playing: " << songList[0] << endl;
+            std::cout << "[1/2] now playing: " << songList[0] << endl;
+            setcolor(white, black);
+            std::cout << endl;
+        }
+
+        else if ((isSLAsOn == false) && (isDebriefOn == true)) {
+            std::cout << "\n\n";
+            std::cout << "     ";
+            setcolor(yellow, black);
+            std::cout << "[2/2] now playing: " << songList[1] << endl;
             setcolor(white, black);
             std::cout << endl;
         }
@@ -697,7 +709,7 @@ void DisplayOptionsMenu() {
 
         std::cout << "\n\n";
         std::cout << "            ";
-        setcolor(blue, black);
+        setcolor(yellow, black);
         std::cout << "who made this?" << endl;
         setcolor(white, black);
         std::cout << endl;
@@ -739,36 +751,53 @@ void DisplayOptionsMenu() {
 // shows our infomation page
 void showInfo() {
 
+
     system("cls");
 
     // Bingwickle was designed to make the boring seem a little more fun. Designed
     // by Blake Carrington, published by ONFOOTMONEY©. 
     // Follow @bingwickle for future updates (if there's every any!)
 
-   /* std::string InfoMessage =   "           BingwickleBuddy.\n\n"
-                                "     Designed by Blake Carrington\n\n"
-                                "      Published by ONFOOTMONEY©\n\n"
-                                "       @bingwickle for updates\n";*/
-
-    std::string InfoMessage =   "           BINGWICKLEBUDDY\n\n"
+   /* std::string InfoMessage =   "           BINGWICKLEBUDDY\n\n"
                                 "     DESIGNED BY BLAKE CARRINGTON\n\n"
                                 "      PUBLISHED BY ONFOOTMONEY©\n\n"
-                                "      (AT)BINGWICKLE FOR UPDATES\n";
+                                "      (AT)BINGWICKLE FOR UPDATES\n";*/
+
+    std::string InfoMessage =   "               CREDITS\n\n\n"
+                                "     Dev/Design: 079 Blake\n"
+                                "          Music: 079 Blake\n\n"
+                                "    Built with: C++ (visual studio)\n\n"
+                                "            Version: v1.0.0\n\n"
+                                "    (c) 2025 079 Blake.\n\n"
+                                "                   No Stealing. \n";
+
+    // credit list: 
+  // developer: 
+  // music
+  // icon artist: 
+  // project: Bingwickle - ticket exp counter game
+  // built with: C++ (visual studio)
+  // testers: 
+  // Version: v1.0.0
+  // (c) 2025 079 Blake. Steal and I'll cry.
 
 
     int x = 0;
 
     // center the info message
-    std::cout << "\n\n\n\n\n\n";
+    std::cout << "\n\n\n";
+
+
     while (InfoMessage[x] != '\0')
     {
 
         setcolor(white, black);  // set to white as default
 
 
-        // this checks when we are printing "onfootmoney"
-        if (x >= 82 && x <= 94) {
-            setcolor(green, black);
+        // the x = value is where the colour begins. 
+        // to where the colour ends
+        if (x >= 12 && x <=21) {
+            setcolor(white, black);
         }
 
         cout << InfoMessage[x];
@@ -777,17 +806,17 @@ void showInfo() {
 
         //getchar();
         //cout << x;
-        
     };
 
 
     Sleep(350);
-    cout << "\n\n\n\n";
+    cout << "\n\n";
     cout << "             ";
     setcolor(red, black);
-    cout << "*hit ENTER*";
+    cout << "PRESS ENTER";
     setcolor(white, black);
 
+    // might change this to time
     getchar();
 
 }
@@ -899,9 +928,27 @@ void drawMenu() {
 
         case KEY_LEFT:
 
+            if (counterForOptionMenu == 1 && isOptionMenuActive == true && isDebriefOn == true) {
+                trackNumber--;
+                muteSound();
+                playSong0();
+                isSLAsOn = true;
+                isDebriefOn = false;
+            }
+
             break;
 
         case KEY_RIGHT:
+
+            if (counterForOptionMenu == 1 && isOptionMenuActive == true && isSLAsOn == true) {
+                trackNumber++;
+                muteSound();
+                playSong1();
+                isSLAsOn = false;
+                isDebriefOn = true;
+            }
+
+
 
             break;
 
@@ -976,18 +1023,29 @@ void drawMenu() {
                 }
             }
 
-            // check if we hit "SOUND" button (off)
-            else if (counterForOptionMenu == 1 && isOptionMenuActive == true && soundOn == true) {
+            // check if we hit "SOUND" button (off) (ON SLAs)
+            else if (counterForOptionMenu == 1 && isOptionMenuActive == true && isSLAsOn == true) {
 
                 muteSound();
+                isSLAsOn = false;
                 soundOn = false;
             
             }
 
-            // check if we hit "SOUND" button (on)
-            else if (counterForOptionMenu == 1 && isOptionMenuActive == true && soundOn == false) {
+            // check if we hit "SOUND" button (off) (ON DEBRIEF)
+            else if (counterForOptionMenu == 1 && isOptionMenuActive == true && isDebriefOn == true) {
 
-                playStartUpSound();
+                muteSound();
+                isDebriefOn = false;
+                soundOn = false;
+
+            }
+
+            // check if we hit "SOUND" button (on)
+            else if (counterForOptionMenu == 1 && isOptionMenuActive == true && isSLAsOn == false) {
+
+                playSong0();
+                isSLAsOn = true;
                 soundOn = true;
 
             }

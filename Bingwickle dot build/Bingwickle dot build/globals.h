@@ -34,8 +34,8 @@ extern bool gameActive;
 // for console button
 extern bool consoleActive;
 
-// toggles sound
-extern bool soundOn;
-
 // check if snap was pressed 
 extern bool snapWasPressed;
+
+// global sound check
+extern bool soundOn;

@@ -408,6 +408,7 @@ void GameFeedInput() {
 	// head back to main 
 	if (cmd == "bw_leave") {
 
+		hideTheCursor();
 		consoleActive = false;
 		isMainMenuActive = true;
 
@@ -643,6 +644,9 @@ void runGameFeed() {
 	unsigned srand((int)time(NULL));
 
 	pushSpace();
+	if (cursorOff == false) {
+		showTheCursor();
+	}
 	DefaultCmdsPromptToFeed();  // show initial tip for bw_cmd
 
 	while (consoleActive == true) {
