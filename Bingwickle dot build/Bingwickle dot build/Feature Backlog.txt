@@ -33,6 +33,8 @@
 -> pressing right/left arrow will play another song (update the "now playing") 
 > upload full OST to YT
 > a total of 5 songs for first release
+> fix creation login point not sending to file
+> fix login point not sending to file
 
 
 [AUDIO]

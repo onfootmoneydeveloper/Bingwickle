@@ -181,7 +181,7 @@ void setUpUserPath() {
 		//std::ofstream outfileXpRemaining("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\expRemaining.txt");
 		std::ofstream outfileTotalTicketsCount("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\ticketTotal.txt");
 		std::ofstream outfileCurrentLvl("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\currentLvl.txt");
-		std::ofstream outfileTicketsHistory("C:\\Bingwickle\\Users\\" + globalUsername + "\\tickets\\ticketcount_date_here.txt");
+		std::ofstream outfileTicketsHistory("C:\\Bingwickle\\Users\\" + globalUsername + "\\tickets\\ticket_data.txt");
 
 
 		// since this is the first logim, here's your first login point
@@ -296,25 +296,32 @@ void setUpUserPath() {
 
 // get +1 whenever you log in
 void incrementLoginCount() {
-
 	std::string filePath = "C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\loginCount.txt";
 
-	// Step 1: Read the existing value
 	int loginCount = 0;
 	std::ifstream infile(filePath);
 	if (infile) {
-		infile >> loginCount;
+		if (!(infile >> loginCount)) {
+			loginCount = 0; // fallback if file is empty or corrupt
+		}
 		infile.close();
 	}
 	else {
-		std::cerr << "Failed to open file for reading: " << filePath << std::endl;
-		return;
+		// Try to create the file if it doesn't exist
+		std::ofstream createFile(filePath);
+		if (createFile) {
+			createFile << 0;
+			createFile.close();
+			loginCount = 0;
+		}
+		else {
+			std::cerr << "Failed to open or create file: " << filePath << std::endl;
+			return;
+		}
 	}
 
-	// Step 2: Increment the number
 	loginCount++;
 
-	// Step 3: Write it back
 	std::ofstream outfile(filePath);
 	if (outfile) {
 		outfile << loginCount;
@@ -328,21 +335,20 @@ void incrementLoginCount() {
 
 int main() {
 
-	
-
-	playSong0(); 
-
 	generalWindowSetup();		// run initial console defaults.
+
 
 	playSong0();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
 
 
-	//startUpScreen();			// load starting screen. duh.                               //(REMOVE to skip load)
-	//getUsername();																			//(REMOVE to skip load)
-	//setUpUserPath();																		//(REMOVE to skip load)
+	startUpScreen();			//(REMOVE to skip load)
+	getUsername();			//(REMOVE to skip load)
+	setUpUserPath();			//(REMOVE to skip load)
 
 
-	//incrementLoginCount();	// <--- whenever you login, get +1
+	incrementLoginCount();	// <--- whenever you login, get +1
+
+
 
 	// menu/game loop
 
