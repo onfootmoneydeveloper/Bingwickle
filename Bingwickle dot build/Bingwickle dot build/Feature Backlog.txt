@@ -2,47 +2,57 @@
 [FEATURE/CHANGE BACKLOG]
 
 
--> description text for sound
--> desctiption text for snap window
--> description text for credits
--> show cursor when 'info' plays (now never shows)
--> short delay when moving from main/options menu
+
 > loading screen on 'play' (tips? exp earned?) *check references*
+
 > design new 'play' core system (level system)
+
 > random bonus exp when entering a ref
+
 > design new 'play' UI
--> display the 'username' at in-game input point
+
 > create 5-7 commands only (simple names)
+
 > to leave console = "done" (subject to change)
--> update 'info' to credits
--> change/update credits
--> dont show cursor on ANY menu pages, only in-game and console
--> on/off colour/symbol indicators for (cursor/sound) (x) (-) (red, green)
--> when you hit "snap window", show "snapped!" text (now animates instead)
--> change snap window name?
--> when you add a ref, send it to text file
--> when you add another ref, send to the same text file, stack both refs
--> when you add the same text file, if there's a duplicate, flag and reject
--> the ref to text file is "ref/date/time" (changed to ticket_list_date)
+
 > each ref entered adds to the daily ticket counter
+
 > create a function that adds your daily ticket amount to your total (merge)
+
 > put a warning on 'exit' if your daily ticket count is 1 or more
+
 > always show 'daily ticket count' / (or "tickets") on MM if you have any
--> create a new 'ticket_date_here' file for EACH day
--> ammend so you can only log on AFTER 9am (make this clear)
--> pressing right/left arrow will play another song (update the "now playing") 
+
 > upload full OST to YT
+
+> finalise start-up screen / startUpScreen(); 
+
 > a total of 5 songs for first release
-> fix creation login point not sending to file
-> fix login point not sending to file
+
+
+
+
+
+
 
 
 [AUDIO]
 
-> sound effect when snapped
+> sound effect when SLAM hits
+
+> sound effect when ticket refernece triggers "shake"
+
 > sound effect when you 'play'
+
 > play sound effect for exp pop ups
+
 > play sound for daily log in point
+
+
+
+
+
+
 
 
 [COMMANDS]
@@ -52,6 +62,74 @@
 > play?
 > stats?
 > clear?
+
+
+
+
+
+
+
+[SNAP: BETA] ** for v.2 and beyond
+
+> Snap to reality/simulation mode: uses 2 seperate modes (simulation and/or operator) - 
+	where pressing snao switches user between both with the slam effect
+
+> Snap to shape: changes the shape of the overall UI (small, wide)
+
+> use snap to "switch" users quickly espeically if profiles are added later
+
+> a new world - design and develop and load-in a game to play, called "snap". 
+	this will also edit the users directory with NEW stats
+
+
+
+
+
+
+
+[DONE]
+
+-> description text for sound
+
+-> desctiption text for snap window
+
+-> description text for credits
+
+-> show cursor when 'info' plays (now never shows)
+
+-> short delay when moving from main/options menu
+
+-> display the 'username' at in-game input point
+
+-> update 'info' to credits
+
+-> change/update credits
+
+-> dont show cursor on ANY menu pages, only in-game and console
+
+-> on/off colour/symbol indicators for (cursor/sound) (x) (-) (red, green)
+
+-> when you hit "snap window", show "snapped!" text (now animates instead)
+
+-> change snap window name?
+
+-> when you add a ref, send it to text file
+
+-> when you add another ref, send to the same text file, stack both refs
+
+-> when you add the same text file, if there's a duplicate, flag and reject
+
+-> the ref to text file is "ref/date/time" (changed to ticket_list_date)
+
+-> create a new 'ticket_date_here' file for EACH day
+
+-> ammend so you can only log on AFTER 9am (make this clear)
+
+-> pressing right/left arrow will play another song (update the "now playing") 
+
+-> fix creation login point not sending to file
+
+-> fix login point not sending to file
 
 
 

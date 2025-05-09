@@ -199,6 +199,94 @@ void playSnapAnimation() {
 
 }
 
+// snap animation ROAM
+void playSnapAnimationROAM() {
+	HWND console = GetConsoleWindow();
+	HWND consoleWindow = GetConsoleWindow();
+	RECT currentPos;
+	GetWindowRect(console, &currentPos); // Get current window position
+
+	const int windowWidth = 320;
+	const int windowHeight = 410;
+
+	// Current top-left position
+	int startX = currentPos.left;
+	int startY = currentPos.top;
+
+	// Shake settings
+	const int shakeDistance = 10;
+	const int shakeCount = 6;
+	const int shakeDelayMs = 30;
+
+	// Shake side to side around current position
+	for (int i = 0; i < shakeCount; ++i) {
+		int offset = (i % 2 == 0) ? -shakeDistance : shakeDistance;
+		MoveWindow(console, startX + offset, startY, windowWidth, windowHeight, TRUE);
+		std::this_thread::sleep_for(std::chrono::milliseconds(shakeDelayMs));
+	}
+
+	// Snap back to current position (not center)
+	MoveWindow(console, startX, startY, windowWidth, windowHeight, TRUE);
+
+	// Lock window resizing
+	SetWindowLong(consoleWindow, GWL_STYLE,
+		GetWindowLong(consoleWindow, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX);
+
+	// Optional: blink background
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_BLUE | BACKGROUND_INTENSITY);
+	std::this_thread::sleep_for(std::chrono::milliseconds(50));
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7); // Reset color
+
+}
+
+// play slam animation ROAM
+void playRiseAndSlamAnimationROAM() {
+	HWND console = GetConsoleWindow();
+	RECT currentRect;
+	GetWindowRect(console, &currentRect);
+
+	const int windowWidth = 320;
+	const int windowHeight = 410;
+
+	// Get current top-left position of the window
+	int startX = currentRect.left;
+	int startY = currentRect.top;
+
+	// RISE UP - smooth rise in small steps
+	const int riseAmount = 30;
+	const int riseSteps = 10;
+	const int riseDelay = 25;
+
+	for (int i = 0; i < riseSteps; ++i) {
+		int newY = startY - (riseAmount * (i + 1)) / riseSteps;
+		MoveWindow(console, startX, newY, windowWidth, windowHeight, TRUE);
+		std::this_thread::sleep_for(std::chrono::milliseconds(riseDelay));
+	}
+
+	// SHORT PAUSE AT PEAK
+	std::this_thread::sleep_for(std::chrono::milliseconds(80));
+
+	// SLAM DOWN - fast drop back to original position
+	const int slamSteps = 4;
+	for (int i = slamSteps; i >= 0; --i) {
+		int newY = startY - (riseAmount * i) / slamSteps;
+		MoveWindow(console, startX, newY, windowWidth, windowHeight, TRUE);
+		std::this_thread::sleep_for(std::chrono::milliseconds(15));
+	}
+
+	// LITTLE SHOCK SHAKE ON IMPACT
+	const int shakeOffset = 5;
+	for (int i = 0; i < 4; ++i) {
+		int offset = (i % 2 == 0) ? shakeOffset : -shakeOffset;
+		MoveWindow(console, startX + offset, startY, windowWidth, windowHeight, TRUE);
+		std::this_thread::sleep_for(std::chrono::milliseconds(20));
+	}
+
+	// Final snap to original position
+	MoveWindow(console, startX, startY, windowWidth, windowHeight, TRUE);
+}
+
+
 // setting window size
 void setWindowSize620x920() {
 
@@ -214,4 +302,50 @@ void setWindowSize620x920() {
 	SetWindowLong(consoleWindow, GWL_STYLE,
 		GetWindowLong(consoleWindow, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX);
 
+}
+
+// play slam animtion
+void playRiseAndSlamAnimation() {
+	HWND console = GetConsoleWindow();
+	RECT screen;
+	GetWindowRect(GetDesktopWindow(), &screen);
+
+	const int windowWidth = 320;
+	const int windowHeight = 410;
+
+	int centerX = (screen.right - windowWidth) / 2;
+	int centerY = (screen.bottom - windowHeight) / 2;
+
+	// RISE UP - smooth rise in small steps
+	const int riseAmount = 30;
+	const int riseSteps = 10;
+	const int riseDelay = 25;
+
+	for (int i = 0; i < riseSteps; ++i) {
+		int newY = centerY - (riseAmount * (i + 1)) / riseSteps;
+		MoveWindow(console, centerX, newY, windowWidth, windowHeight, TRUE);
+		std::this_thread::sleep_for(std::chrono::milliseconds(riseDelay));
+	}
+
+	// SHORT PAUSE AT PEAK
+	std::this_thread::sleep_for(std::chrono::milliseconds(80));
+
+	// SLAM DOWN - fast drop back to center
+	const int slamSteps = 4;
+	for (int i = slamSteps; i >= 0; --i) {
+		int newY = centerY - (riseAmount * i) / slamSteps;
+		MoveWindow(console, centerX, newY, windowWidth, windowHeight, TRUE);
+		std::this_thread::sleep_for(std::chrono::milliseconds(15));
+	}
+
+	// LITTLE SHOCK SHAKE ON IMPACT
+	const int shakeOffset = 5;
+	for (int i = 0; i < 4; ++i) {
+		int offset = (i % 2 == 0) ? shakeOffset : -shakeOffset;
+		MoveWindow(console, centerX + offset, centerY, windowWidth, windowHeight, TRUE);
+		std::this_thread::sleep_for(std::chrono::milliseconds(20));
+	}
+
+	// Final snap to center
+	MoveWindow(console, centerX, centerY, windowWidth, windowHeight, TRUE);
 }

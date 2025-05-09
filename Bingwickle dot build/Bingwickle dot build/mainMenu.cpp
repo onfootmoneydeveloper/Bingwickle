@@ -1055,7 +1055,8 @@ void drawMenu() {
 
                 snapWasPressed = true;
                 removeScrollBar();
-                playSnapAnimation();
+                playSnapAnimationROAM();
+                playRiseAndSlamAnimationROAM();
                 disableMouseHighlighting();
                 disableMaximize();
             }

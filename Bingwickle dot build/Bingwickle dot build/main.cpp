@@ -71,6 +71,8 @@ void startUpScreen() {
 // if the 'name' is already on the system, we log in.
 // else, create new. 
 
+
+// ** for testing **
 void iconDisplay() {
 	/*
 	makes copies from img to text
@@ -341,7 +343,7 @@ int main() {
 	playSong0();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
 
 
-	startUpScreen();			//(REMOVE to skip load)
+	//startUpScreen();			//(REMOVE to skip load)
 	getUsername();			//(REMOVE to skip load)
 	setUpUserPath();			//(REMOVE to skip load)
 
@@ -364,7 +366,6 @@ int main() {
 		else if (gameActive == true) {	// if we're in game, show the game
 
 			play();
-			saveTicket();
 
 		}
 

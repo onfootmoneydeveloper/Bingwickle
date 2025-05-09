@@ -6,14 +6,49 @@
 #include <fstream>
 #include <vector>	
 #include <chrono>
+
 #include <ctime>
 
-// calling headers
 #include "setConsole.h"
 #include "globals.h"
 #include "audio.h"
 #include "mainMenu.h"
 #include "commandLPrmpt.h"
+
+#pragma region
+// when yo hit play - GET all stats, display stats
+// current stats: 
+
+/*
+
+	currentEXP
+	currentLVL
+	dailyTicketCount
+	expRemaining
+	loginCount
+	ticketCount
+
+	shave down to:
+
+	total EXP						the total amount of experience points you have
+	current Level					your current level based on your experience
+	daily Ticket count				how many tickets you have logged in a day
+	logInCount						how many times you have logged in ( ++ at file set up)
+	totalTicketCount				how many tickets you have done OVERALL
+
+	ticketCount_date_here			e.g ticketCount_29_04_2025 <-- will create new files each day,
+									so if you log on the day after, Bingwickle will create
+									ticketCount_30_04_2025. The file will hold the list of "references"
+									that you have actioned or completed, like this:
+
+									1938394
+									1937835
+									1955...
+
+									Duplicates will be ignored with a messaged (ticket already been actioned)
+
+*/
+#pragma endregion SETUP
 
 int number;
 std::string input;
@@ -23,6 +58,7 @@ void playTestToExit() {
 }
 
 void saveTicket() {
+
 	// Get current date in YYYY-MM-DD format
 
 	auto now = std::chrono::system_clock::now();
@@ -105,19 +141,27 @@ void play() {
 			isMainMenuActive = true;	// switch on menu
 			break;
 		}
+
 		
-		if (input.length() == 7 && std::all_of(input.begin(), input.end(), ::isdigit)) {
+		else if (input.length() == 7 && std::all_of(input.begin(), input.end(), ::isdigit)) {
+
 			try {
-				number = std::stoi(input);
-				std::cout << "saved!: " << number << std::endl;
 
 				saveTicket();
 				// Do something with 'number' here
+
+				number = std::stoi(input);
+				std::cout << "saved!: " << number << std::endl;
+
+				playSnapAnimationROAM();
+				// play animation
+
 			}
 			catch (std::exception&) {
 				std::cout << "Weird...try again?\n";
 			}
 		}
+
 		else {
 			std::cout << "Invalid reference.\n";
 		}
@@ -125,42 +169,4 @@ void play() {
 
 	std::cout << "Exiting play function.\n";
 }
-
-
-
-
-
-
-// when yo hit play - GET all stats, display stats
-// current stats: 
-
-/*
-
-	currentEXP
-	currentLVL
-	dailyTicketCount
-	expRemaining
-	loginCount
-	ticketCount
-
-	shave down to: 
-
-	total EXP						the total amount of experience points you have
-	current Level					your current level based on your experience
-	daily Ticket count				how many tickets you have logged in a day
-	logInCount						how many times you have logged in ( ++ at file set up)
-	totalTicketCount				how many tickets you have done OVERALL
-
-	ticketCount_date_here			e.g ticketCount_29_04_2025 <-- will create new files each day, 
-									so if you log on the day after, Bingwickle will create
-									ticketCount_30_04_2025. The file will hold the list of "references" 
-									that you have actioned or completed, like this: 
-									
-									1938394
-									1937835
-									1955...
-
-									Duplicates will be ignored with a messaged (ticket already been actioned)
-
-*/
 

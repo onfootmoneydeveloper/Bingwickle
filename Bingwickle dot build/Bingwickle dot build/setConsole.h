@@ -65,3 +65,12 @@ void setWindowSize620x920();
 
 // snap animation
 void playSnapAnimation();
+
+// slam animtion
+void playRiseAndSlamAnimation();
+
+// snap animation (ROAM)
+void playSnapAnimationROAM();
+
+// slam animation (ROAD)
+void playRiseAndSlamAnimationROAM();
