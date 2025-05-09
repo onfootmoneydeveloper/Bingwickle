@@ -361,6 +361,7 @@ int main() {
 		else if (gameActive == true) {	// if we're in game, show the game
 
 			play();
+			
 
 		}
 

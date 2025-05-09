@@ -24,6 +24,9 @@
 extern HANDLE hInput;
 #pragma endregion HANDLE
 
+// refernece
+extern int number;
+
 
 // just testing it out
 void playTestToExit();

@@ -112,60 +112,85 @@ void saveTicket() {
 }
 
 void play() {
-	
+
 	system("cls");
 	std::this_thread::sleep_for(std::chrono::seconds(1));
-	
-	std::cout << "\n\n\n\n";
 
-	// if the cursor in on, show it in-game
-	if (cursorOff == false) {
+	if (!cursorOff) {
+
 		showTheCursor();
 	}
-	
-	COORD pos = { 3, 20 };
-	SetConsoleCursorPosition(hConsole, pos);
 
-	std::cout << "   Reference:\n";
+	std::vector<std::string> outputLog;
+
+	const int maxLines = 15;
+
+	const SHORT inputY = 19; // <-- adjust this to move everything up or down
+
+	COORD inputPos = { 3, inputY };
 
 	while (true) {
 
-		std::cout << "   Users\\" << globalUsername << ">  ";
+		// Clear previous lines
+		for (int i = 0; i <= maxLines; ++i) {
+			COORD clearPos = { 0, static_cast<SHORT>(inputPos.Y - i) };
+			SetConsoleCursorPosition(hConsole, clearPos);
+			std::cout << std::string(80, ' ');
+		}
+
+		// tracks output log and removing the oldest when MAX
+		if (outputLog.size() > maxLines) {
+			outputLog.erase(outputLog.begin());
+		}
+
+		int line = 0;
+
+		// renders latest message starting from most recent - prints each one by one
+		for (auto it = outputLog.rbegin(); it != outputLog.rend(); ++it) {
+			if (line >= maxLines) break;
+
+			// change output to input space (inputPos.Y - (digit) - line)
+			COORD logPos = { 0, static_cast<SHORT>(inputPos.Y - 2 - line) };
+			SetConsoleCursorPosition(hConsole, logPos);
+			std::cout << *it;
+			++line;
+		}
+
+		// set new console position before getting input
+		SetConsoleCursorPosition(hConsole, inputPos);
+		std::cout << "    Users\\" << globalUsername << ">  ";
 		std::cin >> input;
 
+		// check if DONE command was used
 		if (input == "done") {
-
 			hideTheCursor();
-			gameActive = false;			// not in-game
-			isMainMenuActive = true;	// switch on menu
+			gameActive = false;
+			isMainMenuActive = true;
 			break;
 		}
 
+		// gets/checks the length of string if its not a command
 		else if (input.length() == 7 && std::all_of(input.begin(), input.end(), ::isdigit)) {
 
 			try {
-
-				// stored.
 				saveTicket();
-
 				number = std::stoi(input);
-				std::cout << "saved!: " << number << std::endl;
-
-				// play anim
 				playSnapAnimationROAM();
-
+				outputLog.push_back("   Saved ticket: " + input);
 			}
-
 			catch (std::exception&) {
-				std::cout << "Weird...try again?\n";
+				outputLog.push_back("Weird... try again?");
 			}
 		}
 
 		else {
-			std::cout << "Invalid reference.\n";
+			outputLog.push_back("   Invalid reference.");
 		}
 	}
 
-	std::cout << "Exiting play function.\n";
+	// load back to MM
+	system("cls");
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+
 }
 
