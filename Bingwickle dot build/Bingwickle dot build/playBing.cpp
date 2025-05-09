@@ -116,7 +116,6 @@ void play() {
 	system("cls");
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 	
-
 	std::cout << "\n\n\n\n";
 
 	// if the cursor in on, show it in-game
@@ -131,32 +130,32 @@ void play() {
 
 	while (true) {
 
-		
 		std::cout << "   Users\\" << globalUsername << ">  ";
 		std::cin >> input;
 
 		if (input == "done") {
+
 			hideTheCursor();
 			gameActive = false;			// not in-game
 			isMainMenuActive = true;	// switch on menu
 			break;
 		}
 
-		
 		else if (input.length() == 7 && std::all_of(input.begin(), input.end(), ::isdigit)) {
 
 			try {
 
+				// stored.
 				saveTicket();
-				// Do something with 'number' here
 
 				number = std::stoi(input);
 				std::cout << "saved!: " << number << std::endl;
 
+				// play anim
 				playSnapAnimationROAM();
-				// play animation
 
 			}
+
 			catch (std::exception&) {
 				std::cout << "Weird...try again?\n";
 			}

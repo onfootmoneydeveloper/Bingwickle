@@ -339,18 +339,13 @@ int main() {
 
 	generalWindowSetup();		// run initial console defaults.
 
-
 	playSong0();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
-
 
 	//startUpScreen();			//(REMOVE to skip load)
 	getUsername();			//(REMOVE to skip load)
 	setUpUserPath();			//(REMOVE to skip load)
 
-
 	incrementLoginCount();	// <--- whenever you login, get +1
-
-
 
 	// menu/game loop
 
@@ -371,9 +366,7 @@ int main() {
 
 	} while (1);
 
-	
 	system("pause");		// <--- for testing
 	exit(0);
 
-	
 }
