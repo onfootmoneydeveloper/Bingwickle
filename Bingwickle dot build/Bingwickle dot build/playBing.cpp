@@ -53,7 +53,24 @@
 int number;
 std::string input;
 
+
 bool isDuplicate = false;
+
+int dailyTicketCount = 0;
+int totalTicketCount = 0;
+
+void printAtPosition(int x, int y, const std::string& text) {
+
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+
+	// Get handle to the console output
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleCursorPosition(hConsole, coord);
+
+	std::cout << text;
+}
 
 void playTestToExit() {
 	exit(0);
@@ -130,6 +147,133 @@ void saveTicket() {
 
 void saveDailyTicketPoint() {
 
+	namespace fs = std::filesystem;
+
+	fs::path directoryPath = "C:\\Bingwickle\\Users\\" + globalUsername + "\\v1";
+	fs::path filePath = directoryPath / "dailyTicketCount.txt";
+
+	// Ensure directory exists
+	if (!fs::exists(directoryPath)) {
+		try {
+			fs::create_directories(directoryPath);
+		}
+		catch (const fs::filesystem_error& e) {
+			std::cerr << "Error creating directory: " << e.what() << std::endl;
+			return;
+		}
+	}
+
+	// Read current value if file exists
+	if (fs::exists(filePath)) {
+		std::ifstream inFile(filePath);
+		if (inFile >> dailyTicketCount) {
+			// Read successful
+		}
+		else {
+			dailyTicketCount = 0; // Reset if unreadable
+		}
+		inFile.close();
+	}
+	else {
+		dailyTicketCount = 0; // No file yet
+	}
+
+	// Increment and write back
+	dailyTicketCount++;
+
+	std::ofstream outFile(filePath);
+	if (outFile) {
+		outFile << dailyTicketCount;
+		outFile.close();
+	}
+	else {
+		std::cerr << "Failed to write daily ticket count." << std::endl;
+	}
+}
+
+void loadTicketCountsFromFile() {
+
+	namespace fs = std::filesystem;
+	fs::path dirPath = "C:\\Bingwickle\\Users\\" + globalUsername + "\\v1";
+
+	fs::path dailyFile = dirPath / "dailyTicketCount.txt";
+	fs::path totalFile = dirPath / "totalTicketCount.txt";
+
+	// Read daily ticket count
+	if (fs::exists(dailyFile)) {
+		std::ifstream inFile(dailyFile);
+		if (inFile >> dailyTicketCount) {
+			// Success
+		}
+		else {
+			dailyTicketCount = 0; // fallback
+		}
+		inFile.close();
+	}
+
+	// Read total ticket count
+	if (fs::exists(totalFile)) {
+		std::ifstream inFile(totalFile);
+		if (inFile >> totalTicketCount) {
+			// Success
+		}
+		else {
+			totalTicketCount = 0; // fallback
+		}
+		inFile.close();
+	}
+}
+
+void mergeDailyIntoTotal() {
+
+	namespace fs = std::filesystem;
+	fs::path dirPath = "C:\\Bingwickle\\Users\\" + globalUsername + "\\v1";
+
+	fs::path dailyFile = dirPath / "dailyTicketCount.txt";
+	fs::path totalFile = dirPath / "totalTicketCount.txt";
+
+	// Load both values from file (safely)
+	int daily = 0, total = 0;
+
+	if (fs::exists(dailyFile)) {
+		std::ifstream inFile(dailyFile);
+		inFile >> daily;
+		inFile.close();
+	}
+
+	if (fs::exists(totalFile)) {
+		std::ifstream inFile(totalFile);
+		inFile >> total;
+		inFile.close();
+	}
+
+	// Merge and update values
+	total += daily;
+	daily = 0;
+
+	// Save updated total
+	std::ofstream outTotal(totalFile);
+	if (outTotal) {
+		outTotal << total;
+		outTotal.close();
+	}
+	else {
+		std::cerr << "Failed to write totalTicketCount.txt" << std::endl;
+	}
+
+	// Reset daily
+	std::ofstream outDaily(dailyFile);
+	if (outDaily) {
+		outDaily << daily;
+		outDaily.close();
+	}
+	else {
+		std::cerr << "Failed to write dailyTicketCount.txt" << std::endl;
+	}
+
+	// Optional: update global variables too
+	dailyTicketCount = 0;
+	totalTicketCount = total;
 }
 
 void play() {
@@ -190,6 +334,20 @@ void play() {
 			break;
 		}
 
+		else if (input == "stats") {
+			playRiseAndSlamAnimationROAM();
+			loadTicketCountsFromFile();
+			outputLog.push_back("   daily = " + std::to_string(dailyTicketCount) + ", total = " + std::to_string(totalTicketCount));
+		}
+
+		else if (input == "merge") {
+
+			// no anim
+			mergeDailyIntoTotal();
+			outputLog.push_back("   Merged stats.");
+		
+		}
+
 		// gets/checks the length of string if its not a command
 		else if (input.length() == 7 && std::all_of(input.begin(), input.end(), ::isdigit)) {
 
@@ -206,6 +364,7 @@ void play() {
 
 				else {
 					outputLog.push_back("   Saved ticket: " + input);
+					saveDailyTicketPoint();
 				}
 			}
 			catch (std::exception&) {
@@ -227,4 +386,6 @@ void play() {
 	}
 
 }
+
+
 

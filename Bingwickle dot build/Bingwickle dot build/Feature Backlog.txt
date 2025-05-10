@@ -13,8 +13,6 @@
 
 > create 5 commands only (simple names)
 
-> each ref entered adds to the daily ticket counter
-
 > create a function that adds your daily ticket amount to your total (merge)
 
 > put a warning on 'exit' if your daily ticket count is 1 or more
@@ -40,6 +38,8 @@
 
 > display total tickets in-game [?] (command?)
 
+> REMOVE currentLevel/currentEXP? (develop mock up level up system first)
+
 
 
 
@@ -59,6 +59,10 @@
 > play sound effect for exp pop ups
 
 > play sound for daily log in point [?]  (we would need to either play music after OR stop and restart it)
+
+> slam sound effect for STATS
+
+> sound effect for merge
 
 
 
@@ -151,6 +155,8 @@
 -> sound effect when +1 Ticket
 
 -> to leave console = "done" (subject to change)
+
+-> each ref entered adds to the daily ticket counter
 
 
 

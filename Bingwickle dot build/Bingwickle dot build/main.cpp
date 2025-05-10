@@ -181,7 +181,7 @@ void setUpUserPath() {
 		std::ofstream outfileXpTill("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\loginCount.txt");
 		std::ofstream outfileDailyTicketCount("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\dailyTicketCount.txt");
 		//std::ofstream outfileXpRemaining("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\expRemaining.txt");
-		std::ofstream outfileTotalTicketsCount("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\ticketTotal.txt");
+		std::ofstream outfileTotalTicketsCount("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\totalTicketCount.txt");
 		std::ofstream outfileCurrentLvl("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\currentLvl.txt");
 		std::ofstream outfileTicketsHistory("C:\\Bingwickle\\Users\\" + globalUsername + "\\tickets\\ticket_data.txt");
 
@@ -298,9 +298,11 @@ void setUpUserPath() {
 
 // get +1 whenever you log in
 void incrementLoginCount() {
+
 	std::string filePath = "C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\loginCount.txt";
 
 	int loginCount = 0;
+
 	std::ifstream infile(filePath);
 	if (infile) {
 		if (!(infile >> loginCount)) {

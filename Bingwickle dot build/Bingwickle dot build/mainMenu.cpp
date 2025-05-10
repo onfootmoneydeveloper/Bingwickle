@@ -134,6 +134,8 @@ void DisplayDefaultMenu() {
     std::cout << "                ";
     std::cout << mainMenuItem[3] << endl;
 
+    
+
 }
 
 // check what menu color is active
