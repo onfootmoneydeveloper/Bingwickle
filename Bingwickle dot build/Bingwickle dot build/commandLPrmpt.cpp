@@ -407,7 +407,7 @@ void RunCommandGuide() {
 void GameFeedInput() {
 
 	// head back to main 
-	if (cmd == "bw_leave") {
+	if (cmd == "done") {
 
 		hideTheCursor();
 		consoleActive = false;

@@ -5,15 +5,13 @@
 
 > loading screen on 'play' (tips? exp earned?) *check references*
 
-> design new 'play' core system (level system)
+> design new 'play' core system (level system if needed)
 
 > random bonus exp when entering a ref
 
 > design new 'play' UI
 
-> create 5-7 commands only (simple names)
-
-> to leave console = "done" (subject to change)
+> create 5 commands only (simple names)
 
 > each ref entered adds to the daily ticket counter
 
@@ -27,13 +25,22 @@
 
 > finalise start-up screen / startUpScreen(); 
 
-> a total of 5 songs for first release
+> a total of 3 songs for first release
 
 > stack time and date of login to loginCount.txt [?]
 
 > split output.push so text between text can change colour
 
 > text on "play" feed different color (gray/white)
+
+> finalise any further functionalites in-game (may just be tickets only, with conside for commands)
+	(this helps keep gameplay simple and clean)
+
+> display daily tickets in-game [?] (command?)
+
+> display total tickets in-game [?] (command?)
+
+
 
 
 
@@ -45,16 +52,13 @@
  
 [AUDIO]
 
-> sound effect when SLAM hits
+> sound effect when SLAM hits (on SNAP beta)
 
-> sound effect when +1 Ticket
-
-> sound effect when you 'play'
+> sound effect when you  hit 'play' (teleport idk)
 
 > play sound effect for exp pop ups
 
-> play sound for daily log in point
-
+> play sound for daily log in point [?]  (we would need to either play music after OR stop and restart it)
 
 
 
@@ -69,6 +73,12 @@
 > play?
 > stats?
 > clear?
+> delete
+> find
+> run
+> exit
+> back
+
 
 
 
@@ -138,7 +148,9 @@
 
 -> fix login point not sending to file
 
+-> sound effect when +1 Ticket
 
+-> to leave console = "done" (subject to change)
 
 
 
