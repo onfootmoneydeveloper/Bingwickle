@@ -27,7 +27,6 @@ extern HANDLE hInput;
 // refernece
 extern int number;
 
-
 // just testing it out
 void playTestToExit();
 

@@ -53,6 +53,7 @@
 int number;
 std::string input;
 
+
 void playTestToExit() {
 	exit(0);
 }
@@ -82,6 +83,7 @@ void saveTicket() {
 	std::ifstream inFile(fullPath);
 	std::string line;
 	std::vector<std::string> lines;
+
 	bool isDuplicate = false;
 
 	while (std::getline(inFile, line)) {
@@ -94,7 +96,10 @@ void saveTicket() {
 	inFile.close();
 
 	if (isDuplicate) {
-		std::cout << "Duplicate ticket: #" << input << "\n";
+		setcolor(red, black);
+		std::cout << "               Duplicate ticket." << "\n";
+		std::this_thread::sleep_for(std::chrono::milliseconds(400));
+		setcolor(white, black);
 		return;
 	}
 
@@ -108,7 +113,11 @@ void saveTicket() {
 	}
 	outFile.close();
 
-	std::cout << "Ticket " << input << " was saved.\n";
+	setcolor(yellow, black);
+	std::cout << "              +1 Ticket!" << "\n";
+	std::this_thread::sleep_for(std::chrono::milliseconds(200));
+	playSnapAnimationROAM();
+	setcolor(white, black);
 }
 
 void play() {
@@ -175,7 +184,6 @@ void play() {
 			try {
 				saveTicket();
 				number = std::stoi(input);
-				playSnapAnimationROAM();
 				outputLog.push_back("   Saved ticket: " + input);
 			}
 			catch (std::exception&) {
