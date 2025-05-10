@@ -31,6 +31,10 @@
 
 > stack time and date of login to loginCount.txt [?]
 
+> split output.push so text between text can change colour
+
+> text on "play" feed different color (gray/white)
+
 
 
 

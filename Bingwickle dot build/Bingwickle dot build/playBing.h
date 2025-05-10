@@ -35,3 +35,6 @@ void play();
 
 // save ticket locally
 void saveTicket();
+
+// store daily point
+void saveDailyTicketPoint();

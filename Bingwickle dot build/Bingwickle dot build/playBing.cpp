@@ -53,6 +53,7 @@
 int number;
 std::string input;
 
+bool isDuplicate = false;
 
 void playTestToExit() {
 	exit(0);
@@ -84,7 +85,7 @@ void saveTicket() {
 	std::string line;
 	std::vector<std::string> lines;
 
-	bool isDuplicate = false;
+	//bool isDuplicate = false;
 
 	while (std::getline(inFile, line)) {
 		if (line == input) {
@@ -98,7 +99,7 @@ void saveTicket() {
 	if (isDuplicate) {
 		setcolor(red, black);
 		std::cout << "               Duplicate ticket." << "\n";
-		std::this_thread::sleep_for(std::chrono::milliseconds(400));
+		std::this_thread::sleep_for(std::chrono::milliseconds(800));
 		setcolor(white, black);
 		return;
 	}
@@ -114,11 +115,21 @@ void saveTicket() {
 	outFile.close();
 
 	setcolor(yellow, black);
-	playTicketSound();
+
+
+	// only play ticket sound if global sound is ON
+	if (soundOn == true) {
+		playTicketSound();
+	}
+	
 	std::cout << "              +1 Ticket!" << "\n";
 	std::this_thread::sleep_for(std::chrono::milliseconds(200));
 	playSnapAnimationROAM();
 	setcolor(white, black);
+}
+
+void saveDailyTicketPoint() {
+
 }
 
 void play() {
@@ -185,7 +196,17 @@ void play() {
 			try {
 				saveTicket();
 				number = std::stoi(input);
-				outputLog.push_back("   Saved ticket: " + input);
+
+				if (isDuplicate == true) {
+					setcolor(red, black);
+					outputLog.push_back("   Duplicate.");
+					setcolor(white, black);
+					isDuplicate = false;
+				}
+
+				else {
+					outputLog.push_back("   Saved ticket: " + input);
+				}
 			}
 			catch (std::exception&) {
 				outputLog.push_back("Weird... try again?");
@@ -193,7 +214,7 @@ void play() {
 		}
 
 		else {
-			outputLog.push_back("   Invalid reference.");
+			outputLog.push_back("   Invalid reference!");
 		}
 	}
 
