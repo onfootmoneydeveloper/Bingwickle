@@ -10,6 +10,7 @@
 #include "defs.h"
 #include "globals.h"
 #include "mainMenu.h"
+#include "audio.h"
 
 bool consoleLoopOver = false;			// for testing
 bool updateDone = false;		// used for updating updateGameFeed func
@@ -420,8 +421,13 @@ void GameFeedInput() {
 		updateGameFeed();
 		displayGameFeed();
 		displayUI();
-		std::this_thread::sleep_for(chrono::seconds(1));
 
+		if (soundOn == true) {
+			playSong0();
+		}
+
+		std::this_thread::sleep_for(chrono::seconds(1));
+		
 		// WE WILL LOAD THE MAIN MENU HERE
 
 		resetGameFeed();

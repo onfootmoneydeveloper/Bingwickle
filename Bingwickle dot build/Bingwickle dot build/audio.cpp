@@ -19,6 +19,9 @@ bool isSLAsOn = true;		// on my default
 // toggles song 1
 bool isDebriefOn = false;
 
+// ticket sound 
+bool ticketSoundPlay = false;
+
 int trackNumber = 0;
 
 
@@ -32,6 +35,11 @@ void playSong1() {
 
 	PlaySound(TEXT("Debrief.wav"), NULL, SND_FILENAME | SND_ASYNC);
 
+}
+
+void playTicketSound() {
+
+	PlaySound(TEXT("Ticket.wav"), NULL, SND_FILENAME | SND_ASYNC);
 }
 
 // stop the sound

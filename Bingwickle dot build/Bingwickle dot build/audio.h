@@ -10,6 +10,9 @@ extern bool isDebriefOn;
 // toggles sound
 extern bool isSLAsOn;
 
+// ticket sound 
+extern bool ticketSoundPlay;
+
 extern int trackNumber;
 
 // play start out
@@ -20,6 +23,9 @@ void muteSound();
 
 // song 1 call
 void playSong1();
+
+// ticket sound
+void playTicketSound();
 
 
 

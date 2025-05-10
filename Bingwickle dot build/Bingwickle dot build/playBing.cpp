@@ -114,6 +114,7 @@ void saveTicket() {
 	outFile.close();
 
 	setcolor(yellow, black);
+	playTicketSound();
 	std::cout << "              +1 Ticket!" << "\n";
 	std::this_thread::sleep_for(std::chrono::milliseconds(200));
 	playSnapAnimationROAM();
@@ -199,6 +200,10 @@ void play() {
 	// load back to MM
 	system("cls");
 	std::this_thread::sleep_for(std::chrono::seconds(1));
+	
+	if (soundOn == true) {
+		playSong0();
+	}
 
 }
 

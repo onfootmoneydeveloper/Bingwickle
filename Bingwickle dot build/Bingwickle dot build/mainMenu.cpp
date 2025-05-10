@@ -968,6 +968,7 @@ void drawMenu() {
                 counterForMainMenu = 0;
                 counterForOptionMenu = 0;
                 gameActive = true; // now in-game
+                muteSound();
 
             }
 
@@ -980,6 +981,7 @@ void drawMenu() {
                 counterForMainMenu = 0;
                 counterForOptionMenu = 0;
                 consoleActive = true; // now in console
+                muteSound();
                 runGameFeed();
 
             }

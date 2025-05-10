@@ -38,12 +38,12 @@
 
 
 
-
+ 
 [AUDIO]
 
 > sound effect when SLAM hits
 
-> sound effect when ticket refernece triggers "shake"
+> sound effect when +1 Ticket
 
 > sound effect when you 'play'
 
