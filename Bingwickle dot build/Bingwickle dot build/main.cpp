@@ -54,15 +54,6 @@ void startUpScreen() {
 	system("cls"); // clear our screen
 	std::this_thread::sleep_for(chrono::seconds(2));
 
-
-	// show onfootmoney
-	cout << "\n\n\n\n\n\n\n\n\n";
-	cout << "       ";
-	setcolor(white, black);				// <-- set colour
-	cout << "Pubished by ONFOOTMONEY©";
-	std::this_thread::sleep_for(chrono::seconds(3));
-	system("cls"); // clear our screen
-	std::this_thread::sleep_for(chrono::seconds(1));
 }
 
 // lets get the name of the user. 
@@ -177,12 +168,12 @@ void setUpUserPath() {
 		ourDirectoryToTickets::create_directories("C:\\Bingwickle\\Users\\" + globalUsername + "\\tickets\\");
 
 		// we write some files to the directory
-		std::ofstream outfileCurrentXp("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\currentExp.txt");
+		//std::ofstream outfileCurrentXp("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\currentExp.txt");
 		std::ofstream outfileXpTill("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\loginCount.txt");
 		std::ofstream outfileDailyTicketCount("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\dailyTicketCount.txt");
 		//std::ofstream outfileXpRemaining("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\expRemaining.txt");
 		std::ofstream outfileTotalTicketsCount("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\totalTicketCount.txt");
-		std::ofstream outfileCurrentLvl("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\currentLvl.txt");
+		//std::ofstream outfileCurrentLvl("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\currentLvl.txt");
 		std::ofstream outfileTicketsHistory("C:\\Bingwickle\\Users\\" + globalUsername + "\\tickets\\ticket_data.txt");
 
 
@@ -206,11 +197,11 @@ void setUpUserPath() {
 
 
 		// then we close all these files.
-		outfileXpTill.close();
+		//outfileXpTill.close();
 		outfileDailyTicketCount.close();
 		//outfileXpRemaining.close();
 		outfileTotalTicketsCount.close();
-		outfileCurrentLvl.close();
+		//outfileCurrentLvl.close();
 		outfileTicketsHistory.close();
 
 

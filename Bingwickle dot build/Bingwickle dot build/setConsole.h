@@ -74,6 +74,3 @@ void playSnapAnimationROAM();
 
 // slam animation (ROAD)
 void playRiseAndSlamAnimationROAM();
-
-// FORWARD slam for stats
-void slamWindowTowardUser();

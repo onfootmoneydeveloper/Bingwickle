@@ -40,6 +40,10 @@
 
 > REMOVE currentLevel/currentEXP? (develop mock up level up system first)
 
+> dont allow merge if daily tickets = 0
+
+> exit reminder if daily ticket is > 0
+
 
 
 
