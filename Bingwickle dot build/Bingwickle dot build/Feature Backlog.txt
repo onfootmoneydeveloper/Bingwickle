@@ -36,6 +36,8 @@
 
 > on (+ Ticket), remove the cursor momentarily
 
+> CONSOLE option? (unavailable) ? maybe this is only usable by an "admin" or someone with a "special" name
+
 
 
 
