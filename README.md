@@ -3,3 +3,5 @@
 
  **NOTE** some functions and layout settings are only visable in Win10. But these will be fixed after release so they work in Win11.
 
+ ![Alt text](assets/bingwickleofficialcover.png)
+
