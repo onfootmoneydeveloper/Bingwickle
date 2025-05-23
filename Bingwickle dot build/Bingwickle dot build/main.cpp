@@ -1,7 +1,7 @@
 ﻿/*
 
-	★ BINGWICKLE. Designed by Blake Carrington ★
-	  All rights reserved.   -- '' 2024 '' --
+	★ BINGWICKLE. Designed by 079 Blake ★
+	  All rights reserved.   -- '' 2025'' --
 
 */
 
