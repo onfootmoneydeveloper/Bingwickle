@@ -498,12 +498,16 @@ void DisplayMainMenu() {
 
         */
 
-        std::cout << "\n\n";
-        std::cout << "          ";
-        setcolor(red, black);
-        std::cout << "until next time?" << endl;
-        setcolor(white, black);
-        std::cout << endl;
+
+        if (dailyTicketCount > 0) {
+            std::cout << "\n\n";
+            std::cout << "          ";
+            setcolor(red, black);
+            std::cout << "forgot to merge!" << endl;
+            setcolor(white, black);
+            std::cout << endl;
+        
+        }
 
         break;
 

@@ -3,21 +3,9 @@
 
 
 
-> loading screen on 'play' (tips? exp earned?) *check references*
-
-> design new 'play' core system (level system if needed)
-
-> random bonus exp when entering a ref
-
-> create 5 commands only (simple names)
-
-> put a warning on 'exit' if your daily ticket count is 1 or more
+> loading screen on 'play' (tips? quotes? riddles?) *check references*
 
 > always show 'daily ticket count' / (or "tickets") on MM if you have any
-
-> upload full OST to YT
-
-> a total of 3 songs for first release
 
 > stack time and date of login to loginCount.txt [?]
 
@@ -25,18 +13,18 @@
 
 > text on "play" feed different color (gray/white)
 
-> finalise any further functionalites in-game (may just be tickets only, with conside for commands)
-	(this helps keep gameplay simple and clean)
+> fix MM delay (test on other laptops)
 
-> REMOVE currentLevel/currentEXP? (develop mock up level up system first)
 
-> dont allow merge if daily tickets = 0
 
-> exit reminder if daily ticket is > 0
 
-> on (+ Ticket), remove the cursor momentarily
-
+> swap CONSOLE for SNAP
 > CONSOLE option? (unavailable) ? maybe this is only usable by an "admin" or someone with a "special" name
+> possible mark console with (soon)
+
+
+
+
 
 
 
@@ -70,11 +58,10 @@
 
 [COMMANDS]
 
-> merge (add daily to total)
-> done (exits out of ANY window)
-> play?
-> stats?
-> clear?
+-> merge (add daily to total)
+-> done (exits out of ANY window)
+-> stats? (show daily/total)
+> clear? (clears console)
 > delete
 > find
 > run
@@ -138,6 +125,8 @@
 
 -> when you add the same text file, if there's a duplicate, flag and reject
 
+-> on each ticket input, call the (clear cursor) function
+
 -> the ref to text file is "ref/date/time" (changed to ticket_list_date)
 
 -> create a new 'ticket_date_here' file for EACH day
@@ -166,6 +155,37 @@
 
 -> display total tickets in-game [?] (command?)
 
+-> display "command list" on play feed
+
+-> on (+ Ticket), remove the cursor momentarily
+
+-> upload full OST to YT
+
+-> exit reminder if daily ticket is > 0
+
+
+[ABANDONED]
+
+> show login stats when using "stats" (x)
+
+> currentLevel/currentEXP? (develop mock up level up system)
+
+> finalise any further functionalites in-game (may just be tickets only, with conside for commands)
+	(this helps keep gameplay simple and clean)
+
+> design new 'play' core system (level system if needed)
+
+> random bonus exp when entering a ref
+
+> create 5 commands only (simple names)
+
+> auto merge (either when player leaves 'play' or when they try to exit)
+
+> dont allow merge if daily tickets = 0
+
+> put a warning on 'exit' if your daily ticket count is 1 or more
+
+> a total of 3 songs for first release
 
 
 

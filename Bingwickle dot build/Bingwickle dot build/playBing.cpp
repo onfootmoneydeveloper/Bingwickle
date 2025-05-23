@@ -294,6 +294,11 @@ void play() {
 
 	COORD inputPos = { 3, inputY };
 
+	bool displayCommandList = true;
+
+	outputLog.push_back("    Cmds: stats, merge, done.");
+	
+
 	while (true) {
 
 		// Clear previous lines
@@ -302,6 +307,7 @@ void play() {
 			SetConsoleCursorPosition(hConsole, clearPos);
 			std::cout << std::string(80, ' ');
 		}
+	
 
 		// tracks output log and removing the oldest when MAX
 		if (outputLog.size() > maxLines) {
@@ -314,10 +320,12 @@ void play() {
 		for (auto it = outputLog.rbegin(); it != outputLog.rend(); ++it) {
 			if (line >= maxLines) break;
 
-			// change output to input space (inputPos.Y - (digit) - line)
 			COORD logPos = { 0, static_cast<SHORT>(inputPos.Y - 2 - line) };
 			SetConsoleCursorPosition(hConsole, logPos);
-			std::cout << *it;
+
+			// Always print 80 characters, even if message is shorter
+			std::cout << std::left << std::setw(30) << *it;
+
 			++line;
 		}
 
@@ -335,21 +343,25 @@ void play() {
 		}
 
 		else if (input == "stats") {
+			hideTheCursor();
 			playRiseAndSlamAnimationROAM();
 			loadTicketCountsFromFile();
-			outputLog.push_back("   daily = " + std::to_string(dailyTicketCount) + ", total = " + std::to_string(totalTicketCount));
+			outputLog.push_back("    daily = " + std::to_string(dailyTicketCount) + ", total = " + std::to_string(totalTicketCount));
 		}
 
 		else if (input == "merge") {
 
 			// no anim
+			hideTheCursor();
 			mergeDailyIntoTotal();
-			outputLog.push_back("   Merged stats.");
+			outputLog.push_back("    Merged stats.");
 		
 		}
 
 		// gets/checks the length of string if its not a command
 		else if (input.length() == 7 && std::all_of(input.begin(), input.end(), ::isdigit)) {
+
+			hideTheCursor(); // now the cursor will hide if it peaks by accident
 
 			try {
 				saveTicket();
@@ -357,13 +369,13 @@ void play() {
 
 				if (isDuplicate == true) {
 					setcolor(red, black);
-					outputLog.push_back("   Duplicate.");
+					outputLog.push_back("    Duplicate.");
 					setcolor(white, black);
 					isDuplicate = false;
 				}
 
 				else {
-					outputLog.push_back("   Saved ticket: " + input);
+					outputLog.push_back("    Saved ticket: " + input);
 					saveDailyTicketPoint();
 				}
 			}
@@ -373,7 +385,7 @@ void play() {
 		}
 
 		else {
-			outputLog.push_back("   Invalid reference!");
+			outputLog.push_back("    Invalid reference!");
 		}
 	}
 

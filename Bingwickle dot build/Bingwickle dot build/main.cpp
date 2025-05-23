@@ -189,7 +189,7 @@ void setUpUserPath() {
 		cout << "\n\n\n\n\n\n\n\n\n";
 		cout << "         ";
 		setcolor(yellow, black);				// <-- set colour
-		cout << "Creation Reward: +1";
+		cout << "      Welcome!";
 		std::this_thread::sleep_for(chrono::seconds(2));
 		system("cls"); // clear our screen
 		std::this_thread::sleep_for(chrono::seconds(1));
@@ -242,7 +242,7 @@ void setUpUserPath() {
 			cout << "\n\n\n\n\n\n\n\n\n";
 			cout << "           ";
 			setcolor(yellow, black);				// <-- set colour
-			cout << "Login Reward: +1";
+			cout << "Log-in Count: +1";
 			std::this_thread::sleep_for(chrono::seconds(2));
 			system("cls"); // clear our screen
 			std::this_thread::sleep_for(chrono::seconds(1));
@@ -334,11 +334,11 @@ int main() {
 
 	playSong0();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
 
-	startUpScreen();			//(REMOVE to skip load)
-	getUsername();			//(REMOVE to skip load)
-	setUpUserPath();			//(REMOVE to skip load)
+	//startUpScreen();			//(REMOVE to skip load)
+	//getUsername();			//(REMOVE to skip load)
+	//setUpUserPath();			//(REMOVE to skip load)
 
-	incrementLoginCount();	// <--- whenever you login, get +1
+	//incrementLoginCount();	// <--- whenever you login, get +1
 
 	// menu/game loop
 
