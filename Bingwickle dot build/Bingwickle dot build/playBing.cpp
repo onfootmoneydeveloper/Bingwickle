@@ -301,6 +301,8 @@ void play() {
 
 	while (true) {
 
+		setcolor(dark_white, black);
+
 		// Clear previous lines
 		for (int i = 0; i <= maxLines; ++i) {
 			COORD clearPos = { 0, static_cast<SHORT>(inputPos.Y - i) };

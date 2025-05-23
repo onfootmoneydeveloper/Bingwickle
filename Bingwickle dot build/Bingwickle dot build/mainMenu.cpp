@@ -998,6 +998,8 @@ void drawMenu() {
             // if we hit 'CONSOLE'
             else if (counterForOptionMenu == 2) {
 
+                /*
+                
                 isOptionMenuActive = false;
                 isMainMenuActive = false;
                 counterForMainMenu = 0;
@@ -1005,6 +1007,10 @@ void drawMenu() {
                 consoleActive = true; // now in console
                 muteSound();
                 runGameFeed();
+                
+                */
+
+
 
             }
 

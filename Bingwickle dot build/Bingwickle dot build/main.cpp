@@ -334,11 +334,11 @@ int main() {
 
 	playSong0();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
 
-	//startUpScreen();			//(REMOVE to skip load)
-	//getUsername();			//(REMOVE to skip load)
-	//setUpUserPath();			//(REMOVE to skip load)
+	startUpScreen();			//(REMOVE to skip load)
+	getUsername();			//(REMOVE to skip load)
+	setUpUserPath();			//(REMOVE to skip load)
 
-	//incrementLoginCount();	// <--- whenever you login, get +1
+	incrementLoginCount();	// <--- whenever you login, get +1
 
 	// menu/game loop
 

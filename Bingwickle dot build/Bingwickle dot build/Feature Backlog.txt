@@ -11,13 +11,10 @@
 
 > split output.push so text between text can change colour
 
-> text on "play" feed different color (gray/white)
-
 > fix MM delay (test on other laptops)
 
 > add .dll files to build so that it works on NEW NEC laptops
 
-> additional tasks/clean up for console [?]
 
 
 
@@ -47,6 +44,8 @@
 > play sound for daily log in point [?]  (we would need to either play music after OR stop and restart it)
 
 > slam sound effect for STATS
+
+> audio louder
 
 > sound effect for merge
 
@@ -167,6 +166,8 @@
 
 -> possible mark console with (soon)
 
+-> text on "play" feed different color (gray/white)
+
 
 [ABANDONED]
 
@@ -190,6 +191,9 @@
 > put a warning on 'exit' if your daily ticket count is 1 or more
 
 > a total of 3 songs for first release
+
+> additional tasks/clean up for console [?]
+
 
 
 
