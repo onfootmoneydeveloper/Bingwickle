@@ -15,6 +15,8 @@
 
 > fix MM delay (test on other laptops)
 
+> add .dll files to build so that it works on NEW NEC laptops
+
 
 
 
