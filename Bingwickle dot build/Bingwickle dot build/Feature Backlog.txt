@@ -151,8 +151,6 @@
 
 -> finalise start-up screen / startUpScreen(); 
 
--> display daily tickets in-game [?] (command?)
-
 -> display total tickets in-game [?] (command?)
 
 -> display "command list" on play feed
