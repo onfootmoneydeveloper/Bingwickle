@@ -27,8 +27,8 @@
 // 5. counter, 
 // 6. active checker
 
-std::string mainMenuItem[4] = { "PLAY", "CONSOLE" ,"SETTINGS", "EXIT" };
-std::string mainMenuItemSelected[4] = { "   PLAY", "   CONSOLE", "   SETTINGS", "   EXIT", };
+std::string mainMenuItem[4] = { "PLAY", "SNAP" ,"SETTINGS", "EXIT" };
+std::string mainMenuItemSelected[4] = { "   PLAY", "   SNAP", "   SETTINGS", "   EXIT", };
 
 // song list
 std::string songList[5] = { "SLAs?", "Morning", "", "", "", };
@@ -39,8 +39,8 @@ int counterForMainMenu = 0;
 bool isMainMenuActive = true;
 
 
-std::string optionMenuItem[5] = { "CURSOR ", "SOUND", "SNAP" ,"CREDITS", "GO BACK" };
-std::string optionMenuItemSelected[5] = { "    CURSOR ", "    SOUND", "    SNAP", "    CREDITS", "    GO BACK" };
+std::string optionMenuItem[5] = { "CURSOR ", "SOUND", "CONSOLE" ,"CREDITS", "GO BACK" };
+std::string optionMenuItemSelected[5] = { "    CURSOR ", "    SOUND", "    CONSOLE", "    CREDITS", "    GO BACK" };
 int optionMenuSize = end(optionMenuItem) - begin(optionMenuItem);
 int optionSizeMinusOneForArrayReference = optionMenuSize - 1;
 int counterForOptionMenu = 0;
@@ -254,6 +254,29 @@ void OptionMenuColor() {
 
 }
 
+// show if option item is currently in BETA
+void optionInBeta() {
+
+    std::cout << mainMenuItemSelected[1] << " (";
+    setcolor(yellow, black);
+    std::cout << "beta";
+    setcolor(white, black);
+    std::cout << ")" << endl;
+
+}
+
+// show if option item is currently in UNAVAILABLE
+void optionSoon() {
+
+    std::cout << optionMenuItemSelected[2] << " (";
+    setcolor(red, black);
+    std::cout << "soon";
+    setcolor(white, black);
+    std::cout << ")" << endl;
+
+}
+
+
 // this is the MAIN MENU list
 void DisplayMainMenu() {
 
@@ -404,7 +427,8 @@ void DisplayMainMenu() {
         // ONLY USE ME ABOVE SELECTED ITEMS
 
 
-        std::cout << mainMenuItemSelected[1] << "" << endl;  // EXCLAMATION
+        optionInBeta();
+        //std::cout << mainMenuItemSelected[1] << "" << endl;  // EXCLAMATION
         std::cout << endl;
         std::cout << "                ";
         std::cout << mainMenuItem[2] << endl;
@@ -429,7 +453,7 @@ void DisplayMainMenu() {
         std::cout << "\n\n";
         std::cout << "      ";
         setcolor(yellow, black);
-        std::cout << "let's use commands!" << endl;
+        std::cout << "workin' on it!" << endl;
         setcolor(white, black);
         std::cout << endl;
 
@@ -517,16 +541,7 @@ void DisplayMainMenu() {
 
 }
 
-// show if option item is currently in BETA
-void optionInBeta() {
 
-    std::cout << optionMenuItemSelected[2] << " (";
-    setcolor(yellow, black);
-    std::cout << "beta";
-    setcolor(white, black);
-    std::cout << ")" << endl;
-
-}
 
 // this is the OPTIONS MENU
 void DisplayOptionsMenu() {
@@ -643,7 +658,7 @@ void DisplayOptionsMenu() {
 
         break;
 
-    case 2: // SNAP SELECTED
+    case 2: // CONSOLE SELECTED
 
         system("cls");
         pushOptionsMenuToCentre();
@@ -659,7 +674,8 @@ void DisplayOptionsMenu() {
         OptionMenuColor();
         // ONLY USE ME ABOVE SELECTED ITEMS
 
-        optionInBeta();
+        
+        optionSoon();
         //std::cout << optionMenuItemSelected[2] << endl;
         std::cout << endl;
         std::cout << "               ";
@@ -980,7 +996,7 @@ void drawMenu() {
 
 
             // if we hit 'CONSOLE'
-            else if ((counterForMainMenu == 1) && (isMainMenuActive == true)) {
+            else if (counterForOptionMenu == 2) {
 
                 isOptionMenuActive = false;
                 isMainMenuActive = false;
@@ -1059,7 +1075,7 @@ void drawMenu() {
             }
 
             // check if we hit "enter" on SNAP
-            else if (counterForOptionMenu == 2) {
+            else if ((counterForMainMenu == 1) && (isMainMenuActive == true)) {
 
                 snapWasPressed = true;
                 removeScrollBar();

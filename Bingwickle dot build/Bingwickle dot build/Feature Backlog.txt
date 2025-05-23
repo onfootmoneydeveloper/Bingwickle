@@ -17,12 +17,10 @@
 
 > add .dll files to build so that it works on NEW NEC laptops
 
+> additional tasks/clean up for console [?]
 
 
 
-> swap CONSOLE for SNAP
-> CONSOLE option? (unavailable) ? maybe this is only usable by an "admin" or someone with a "special" name
-> possible mark console with (soon)
 
 
 
@@ -162,6 +160,12 @@
 -> upload full OST to YT
 
 -> exit reminder if daily ticket is > 0
+
+-> swap CONSOLE for SNAP
+
+-> CONSOLE option? (unavailable) ? maybe this is only usable by an "admin" or someone with a "special" name
+
+-> possible mark console with (soon)
 
 
 [ABANDONED]
