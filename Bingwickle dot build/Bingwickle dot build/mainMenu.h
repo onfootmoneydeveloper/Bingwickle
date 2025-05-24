@@ -67,3 +67,6 @@ void drawMenu();
 
 // mark an item in Beta
 void optionInBeta();
+
+// display ticket count to menu
+void printTickets();

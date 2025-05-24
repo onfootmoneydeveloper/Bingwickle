@@ -39,3 +39,4 @@ extern bool snapWasPressed;
 
 // global sound check
 extern bool soundOn;
+

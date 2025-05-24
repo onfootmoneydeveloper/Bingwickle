@@ -31,7 +31,7 @@ std::string mainMenuItem[4] = { "PLAY", "SNAP" ,"SETTINGS", "EXIT" };
 std::string mainMenuItemSelected[4] = { "   PLAY", "   SNAP", "   SETTINGS", "   EXIT", };
 
 // song list
-std::string songList[5] = { "SLAs?", "Morning", "", "", "", };
+std::string songList[5] = { "Morning", "", "", "", "", };
 
 int mainMenuSize = end(mainMenuItem) - begin(mainMenuItem);
 int menuSizeMinusOneForArrayReference = mainMenuSize - 1;
@@ -63,6 +63,12 @@ void pushMenuToCentre() {
 // push our optionsmenu down!
 void pushOptionsMenuToCentre() {
     std::cout << "\n\n\n\n\n\n";
+}
+
+void printTickets() {
+    // Move cursor to row 1, column 1 and print "Tickets: 0"
+    //std::cout << "\033[1;4H" << "Tickets: 0" << std::flush;
+    //std::cout << "\033[1;20H" << "Bingwickle" << std::flush;
 }
 
 // toggle for on/off buttons for cursor
@@ -112,6 +118,8 @@ void soundToggleIcon() {
 
     }
 }
+
+
 
 
 // this is the default screen that we only call once.
@@ -394,6 +402,7 @@ void DisplayMainMenu() {
     case 0:
 
         system("cls");  // clear console.
+        printTickets();
         pushMenuToCentre();
 
         // USE THIS ABOVE SELECTED ITEMS
@@ -641,19 +650,19 @@ void DisplayOptionsMenu() {
             std::cout << "\n\n";
             std::cout << "      ";
             setcolor(yellow, black);
-            std::cout << "[1/2] now playing: " << songList[0] << endl;
+            std::cout << "now playing: " << songList[0] << endl;
             setcolor(white, black);
             std::cout << endl;
         }
 
-        else if ((isSLAsOn == false) && (isDebriefOn == true)) {
+        /*else if ((isSLAsOn == false) && (isDebriefOn == true)) {
             std::cout << "\n\n";
             std::cout << "     ";
             setcolor(yellow, black);
             std::cout << "[2/2] now playing: " << songList[1] << endl;
             setcolor(white, black);
             std::cout << endl;
-        }
+        }*/
         
 
         break;
@@ -793,7 +802,7 @@ void showInfo() {
                                 "    (c) 2025 079 Blake.\n\n"
                                 "                   No Stealing. \n";
 
-    // credit list: 
+  // credit list: 
   // developer: 
   // music
   // icon artist: 
@@ -951,11 +960,11 @@ void drawMenu() {
         case KEY_LEFT:
 
             if (counterForOptionMenu == 1 && isOptionMenuActive == true && isDebriefOn == true) {
-                trackNumber--;
+                /*trackNumber--;
                 muteSound();
                 playSong0();
                 isSLAsOn = true;
-                isDebriefOn = false;
+                isDebriefOn = false;*/
             }
 
             break;
@@ -963,11 +972,11 @@ void drawMenu() {
         case KEY_RIGHT:
 
             if (counterForOptionMenu == 1 && isOptionMenuActive == true && isSLAsOn == true) {
-                trackNumber++;
+                /*trackNumber++;
                 muteSound();
                 playSong1();
                 isSLAsOn = false;
-                isDebriefOn = true;
+                isDebriefOn = true;*/
             }
 
 
@@ -979,7 +988,14 @@ void drawMenu() {
             // if we hit 'enter' on the exit button.
             if ((counterForMainMenu) == (menuSizeMinusOneForArrayReference)) {
 
-                exit(0);
+                if (dailyTicketCount > 0) {
+                    playSnapAnimationROAM();
+                }
+
+                else {
+
+                    exit(0);
+                }
             }
 
             // if we hit 'enter' on the PLAY button
@@ -990,8 +1006,9 @@ void drawMenu() {
                 counterForMainMenu = 0;
                 counterForOptionMenu = 0;
                 gameActive = true; // now in-game
+                bouncingDot(5, 5, 5, 2000, 100);
                 muteSound();
-
+               
             }
 
 

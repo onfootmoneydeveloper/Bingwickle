@@ -49,3 +49,5 @@ bool snapWasPressed = false;
 
 // check if global sound is on
 bool soundOn = true;
+
+

@@ -50,3 +50,9 @@ void loadTicketCountsFromFile();
 
 // merge daily to total
 void mergeDailyIntoTotal();
+
+// loading screen
+void bouncingDot(int row, int startCol, int endCol, int durationMs = 3000, int delayMs = 100);
+
+// used for merge
+void slapConsoleWindowAnimation(int impact = 30, int wobble = 6, int wobbleTimes = 6, int delayMs = 20);

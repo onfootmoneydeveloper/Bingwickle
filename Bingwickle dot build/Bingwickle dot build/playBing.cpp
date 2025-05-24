@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>	
 #include <chrono>
+#include <format>      // For C++20 std::format 
 
 #include <ctime>
 
@@ -58,6 +59,10 @@ bool isDuplicate = false;
 
 int dailyTicketCount = 0;
 int totalTicketCount = 0;
+
+
+
+namespace fs = std::filesystem;
 
 void printAtPosition(int x, int y, const std::string& text) {
 
@@ -276,6 +281,63 @@ void mergeDailyIntoTotal() {
 	totalTicketCount = total;
 }
 
+// loading screen
+void bouncingDot(int row, int startCol, int endCol, int durationMs = 2000, int delayMs = 100) {
+
+	int steps = durationMs / delayMs;
+	bool forward = true;
+	int pos = startCol;
+
+	system("cls");
+
+	for (int i = 0; i < steps; ++i) {
+		std::cout << "\033[" << row << ";" << pos << "H" << "." << std::flush;
+		std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
+		std::cout << "\033[" << row << ";" << pos << "H" << " " << std::flush; // erase dot
+
+		if (forward) {
+			if (pos < endCol) pos++;
+			else {
+				pos--;
+				forward = false;
+			}
+		}
+		else {
+			if (pos > startCol) pos--;
+			else {
+				pos++;
+				forward = true;
+			}
+		}
+	}
+}
+
+// merge function animation
+void slapConsoleWindowAnimation(int impact = 30, int wobble = 6, int wobbleTimes = 6, int delayMs = 20) {
+	HWND hwnd = GetConsoleWindow();
+	RECT rect;
+	GetWindowRect(hwnd, &rect);
+	int originalX = rect.left;
+	int originalY = rect.top;
+
+	// Step 1: Sudden slap to the right
+	SetWindowPos(hwnd, nullptr, originalX + impact, originalY, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
+	std::this_thread::sleep_for(std::chrono::milliseconds(30));
+
+	// Step 2: Wobble back and forth like recoil
+	for (int i = 0; i < wobbleTimes; ++i) {
+		int offset = (i % 2 == 0 ? -wobble : wobble);
+		SetWindowPos(hwnd, nullptr, originalX + offset, originalY, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
+		std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
+	}
+
+	// Step 3: Settle back to original position
+	SetWindowPos(hwnd, nullptr, originalX, originalY, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
+}
+
+
+
+
 void play() {
 
 	system("cls");
@@ -296,7 +358,9 @@ void play() {
 
 	bool displayCommandList = true;
 
-	outputLog.push_back("    Cmds: stats, merge, done.");
+	outputLog.push_back("    Cmds: stats, merge, exit");
+	//outputLog.push_back("    Cmds: copy, clear. ");
+	outputLog.push_back("  ");
 	
 
 	while (true) {
@@ -337,7 +401,7 @@ void play() {
 		std::cin >> input;
 
 		// check if DONE command was used
-		if (input == "done") {
+		if (input == "exit") {
 			hideTheCursor();
 			gameActive = false;
 			isMainMenuActive = true;
@@ -348,15 +412,27 @@ void play() {
 			hideTheCursor();
 			playRiseAndSlamAnimationROAM();
 			loadTicketCountsFromFile();
+
 			outputLog.push_back("    daily = " + std::to_string(dailyTicketCount) + ", total = " + std::to_string(totalTicketCount));
 		}
 
 		else if (input == "merge") {
 
-			// no anim
-			hideTheCursor();
-			mergeDailyIntoTotal();
-			outputLog.push_back("    Merged stats.");
+			if (dailyTicketCount == 0) { // there is nothing to merge
+
+				hideTheCursor();
+				outputLog.push_back("    There's no need to merge.");
+			
+			}
+
+			else { // we have a ticket to merge
+
+				hideTheCursor();
+				mergeDailyIntoTotal();
+				slapConsoleWindowAnimation();
+				outputLog.push_back("    Merged stats.");
+			
+			}
 		
 		}
 

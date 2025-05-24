@@ -169,7 +169,7 @@ void setUpUserPath() {
 
 		// we write some files to the directory
 		//std::ofstream outfileCurrentXp("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\currentExp.txt");
-		std::ofstream outfileXpTill("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\loginCount.txt");
+		//std::ofstream outfileXpTill("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\loginCount.txt");
 		std::ofstream outfileDailyTicketCount("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\dailyTicketCount.txt");
 		//std::ofstream outfileXpRemaining("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\expRemaining.txt");
 		std::ofstream outfileTotalTicketsCount("C:\\Bingwickle\\Users\\" + globalUsername + "\\v1\\totalTicketCount.txt");
@@ -180,7 +180,7 @@ void setUpUserPath() {
 		// since this is the first logim, here's your first login point
 
 
-		outfileXpTill << loginCountNumber;	 // writes the number to the file
+		//outfileXpTill << loginCountNumber;	 // writes the number to the file
 
 
 		// Lets remind the user that they have just 
@@ -239,6 +239,7 @@ void setUpUserPath() {
 			// Lets remind the user that they have just 
 			// recieved +1 login?
 
+			/*
 			cout << "\n\n\n\n\n\n\n\n\n";
 			cout << "           ";
 			setcolor(yellow, black);				// <-- set colour
@@ -246,6 +247,7 @@ void setUpUserPath() {
 			std::this_thread::sleep_for(chrono::seconds(2));
 			system("cls"); // clear our screen
 			std::this_thread::sleep_for(chrono::seconds(1));
+			*/
 
 			// [  ENTERING GAME   ]
 			// below, we will write the logic where we pull the encrpt data 
@@ -334,11 +336,11 @@ int main() {
 
 	playSong0();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
 
-	startUpScreen();			//(REMOVE to skip load)
-	getUsername();			//(REMOVE to skip load)
-	setUpUserPath();			//(REMOVE to skip load)
+	//startUpScreen();			//(REMOVE to skip load)
+	//getUsername();			//(REMOVE to skip load)
+	//setUpUserPath();			//(REMOVE to skip load)
 
-	incrementLoginCount();	// <--- whenever you login, get +1
+	//incrementLoginCount();	// <--- whenever you login, get +1
 
 	// menu/game loop
 
@@ -348,7 +350,6 @@ int main() {
 
 			DisplayDefaultMenu();
 			drawMenu();
-
 		}
 
 		else if (gameActive == true) {	// if we're in game, show the game

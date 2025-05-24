@@ -2,13 +2,6 @@
 [FEATURE/CHANGE BACKLOG]
 
 
-
-> loading screen on 'play' (tips? quotes? riddles?) *check references*
-
-> always show 'daily ticket count' / (or "tickets") on MM if you have any
-
-> stack time and date of login to loginCount.txt [?]
-
 > split output.push so text between text can change colour
 
 > fix MM delay (test on other laptops)
@@ -39,15 +32,13 @@
 
 > sound effect when you  hit 'play' (teleport idk)
 
-> play sound effect for exp pop ups
-
-> play sound for daily log in point [?]  (we would need to either play music after OR stop and restart it)
-
 > slam sound effect for STATS
+
+> sound effect for merge
 
 > audio louder
 
-> sound effect for merge
+> exit sound if there are still tickets available
 
 
 
@@ -194,7 +185,15 @@
 
 > additional tasks/clean up for console [?]
 
+> stack time and date of login to loginCount.txt [?]
 
+> play sound for daily log in point [?]  (we would need to either play music after OR stop and restart it)
+
+> play sound effect for exp pop ups
+
+> loading screen on 'play' (tips? quotes? riddles?) *check references*
+
+> always show 'daily ticket count' / (or "tickets") on MM if you have any
 
 
 
