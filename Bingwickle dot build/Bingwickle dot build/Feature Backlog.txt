@@ -3,6 +3,11 @@
 
 > add .dll files to build so that it works on NEW NEC laptops
 
+MSVCP140D.dll
+VCRUNTIME140D.dll
+VCRUNTIME140_1D.dll
+ucrtbased.dll
+
 
 
 
@@ -12,7 +17,6 @@
 -> stats (show daily/total)
 -> merge (add daily to total)
 -> exit (exits out of ANY window)
-
 
 
 

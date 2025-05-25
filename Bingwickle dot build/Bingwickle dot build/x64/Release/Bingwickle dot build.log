@@ -3,45 +3,210 @@
   globals.cpp
   main.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(106,36): error C2039: 'filesystem': is not a member of 'std'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(130,36): error C2039: 'filesystem': is not a member of 'std'
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\fstream(20,1):
   see declaration of 'std'
   
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(106,36): error C2878: 'filesystem': a namespace or class of this name does not exist
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(107,41): error C2039: 'filesystem': is not a member of 'std'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(130,36): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(131,41): error C2039: 'filesystem': is not a member of 'std'
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\fstream(20,1):
   see declaration of 'std'
   
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(107,41): error C2878: 'filesystem': a namespace or class of this name does not exist
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(110,7): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(110,19): error C2039: 'path': is not a member of 'std'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(131,41): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(134,7): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(134,19): error C2039: 'path': is not a member of 'std'
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\fstream(20,1):
   see declaration of 'std'
   
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(110,19): error C2065: 'path': undeclared identifier
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(110,24): error C2146: syntax error: missing ';' before identifier 'bingwicklePath'
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(110,24): error C2065: 'bingwicklePath': undeclared identifier
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(113,29): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(113,41): error C2039: 'exists': is not a member of 'std'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(134,19): error C2065: 'path': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(134,24): error C2146: syntax error: missing ';' before identifier 'bingwicklePath'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(134,24): error C2065: 'bingwicklePath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(137,29): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(137,41): error C2039: 'exists': is not a member of 'std'
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\fstream(20,1):
   see declaration of 'std'
   
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(113,48): error C2065: 'bingwicklePath': undeclared identifier
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(113,41): error C3861: 'exists': identifier not found
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(127,111): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(127,123): error C2039: 'is_directory': is not a member of 'std'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(137,48): error C2065: 'bingwicklePath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(137,41): error C3861: 'exists': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(151,111): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(151,123): error C2039: 'is_directory': is not a member of 'std'
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\fstream(20,1):
   see declaration of 'std'
   
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(127,136): error C2065: 'bingwicklePath': undeclared identifier
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(127,123): error C3861: 'is_directory': identifier not found
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(143,3): error C2653: 'ourDirectoryToV1': is not a class or namespace name
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(143,21): error C3861: 'create_directories': identifier not found
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(144,3): error C2653: 'ourDirectoryToTickets': is not a class or namespace name
-C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle dot build\Bingwickle dot build\main.cpp(144,26): error C3861: 'create_directories': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(151,136): error C2065: 'bingwicklePath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(151,123): error C3861: 'is_directory': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(167,3): error C2653: 'ourDirectoryToV1': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(167,21): error C3861: 'create_directories': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(168,3): error C2653: 'ourDirectoryToTickets': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\main.cpp(168,26): error C3861: 'create_directories': identifier not found
   mainMenu.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
   playBing.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(61,21): error C2039: 'filesystem': is not a member of 'std'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\chrono(48,1):
+  see declaration of 'std'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(61,21): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(83,7): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(83,19): error C2039: 'create_directories': is not a member of 'std'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\chrono(48,1):
+  see declaration of 'std'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(83,19): error C3861: 'create_directories': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(136,22): error C2039: 'filesystem': is not a member of 'std'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\chrono(48,1):
+  see declaration of 'std'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(136,22): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(138,2): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(138,6): error C2065: 'path': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(138,11): error C2146: syntax error: missing ';' before identifier 'directoryPath'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(138,11): error C2065: 'directoryPath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(139,2): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(139,6): error C2065: 'path': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(139,11): error C2146: syntax error: missing ';' before identifier 'filePath'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(139,11): error C2065: 'filePath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(139,22): error C2065: 'directoryPath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(142,7): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(142,18): error C2065: 'directoryPath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(142,11): error C3861: 'exists': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(144,4): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(144,27): error C2065: 'directoryPath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(144,8): error C3861: 'create_directories': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(146,16): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(146,36): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(146,36): error C2143: syntax error: missing ',' before '&'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(147,49): error C2065: 'e': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(153,6): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(153,17): error C2065: 'filePath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(153,10): error C3861: 'exists': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(154,24): error C2065: 'filePath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(170,24): error C2065: 'filePath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(183,22): error C2039: 'filesystem': is not a member of 'std'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\chrono(48,1):
+  see declaration of 'std'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(183,22): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(184,2): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(184,6): error C2065: 'path': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(184,11): error C2146: syntax error: missing ';' before identifier 'dirPath'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(184,11): error C2065: 'dirPath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(186,2): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(186,6): error C2065: 'path': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(186,11): error C2146: syntax error: missing ';' before identifier 'dailyFile'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(186,11): error C2065: 'dailyFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(186,23): error C2065: 'dirPath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(187,2): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(187,6): error C2065: 'path': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(187,11): error C2146: syntax error: missing ';' before identifier 'totalFile'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(187,11): error C2065: 'totalFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(187,23): error C2065: 'dirPath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(190,6): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(190,17): error C2065: 'dailyFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(190,10): error C3861: 'exists': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(191,24): error C2065: 'dailyFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(202,6): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(202,17): error C2065: 'totalFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(202,10): error C3861: 'exists': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(203,24): error C2065: 'totalFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(217,22): error C2039: 'filesystem': is not a member of 'std'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\chrono(48,1):
+  see declaration of 'std'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(217,22): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(218,2): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(218,6): error C2065: 'path': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(218,11): error C2146: syntax error: missing ';' before identifier 'dirPath'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(218,11): error C2065: 'dirPath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(220,2): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(220,6): error C2065: 'path': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(220,11): error C2146: syntax error: missing ';' before identifier 'dailyFile'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(220,11): error C2065: 'dailyFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(220,23): error C2065: 'dirPath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(221,2): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(221,6): error C2065: 'path': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(221,11): error C2146: syntax error: missing ';' before identifier 'totalFile'
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(221,11): error C2065: 'totalFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(221,23): error C2065: 'dirPath': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(226,6): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(226,17): error C2065: 'dailyFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(226,10): error C3861: 'exists': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(227,24): error C2065: 'dailyFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(232,6): error C2653: 'fs': is not a class or namespace name
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(232,17): error C2065: 'totalFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(232,10): error C3861: 'exists': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(233,24): error C2065: 'totalFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(243,25): error C2065: 'totalFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(253,25): error C2065: 'dailyFile': undeclared identifier
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(376,35): error C2039: 'setw': is not a member of 'std'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\chrono(48,1):
+  see declaration of 'std'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(376,35): error C3861: 'setw': identifier not found
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(376,14): error C2593: 'operator <<' is ambiguous
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(480,39):
+  could be 'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(448,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(const void *)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(430,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long double)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(412,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(double)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(394,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(float)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(376,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(358,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(__int64)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(340,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned long)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(322,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(303,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned int)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(277,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(258,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned short)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(224,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(short)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(206,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(bool)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(200,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(194,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(189,39):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &))'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\thread(290,26):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,std::thread::id)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(1080,32):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const std::error_code &)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(945,31):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,unsigned char)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(939,31):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const unsigned char *)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(934,31):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,signed char)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(928,31):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const signed char *)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(811,31):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,char)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(766,31):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(730,32):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,char)'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\ostream(686,32):
+  or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
+  C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(376,14):
+  while trying to match the argument list '(std::basic_ostream<char,std::char_traits<char>>, unknown-type)'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(441,40): error C2039: 'all_of': is not a member of 'std'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\chrono(48,1):
+  see declaration of 'std'
+  
+C:\Users\Admin\Desktop\LIVE\Bingwickle-v.1one\Bingwickle\Bingwickle dot build\Bingwickle dot build\playBing.cpp(441,40): error C3861: 'all_of': identifier not found
   setConsole.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
