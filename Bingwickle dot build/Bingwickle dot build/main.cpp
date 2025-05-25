@@ -334,7 +334,7 @@ int main() {
 
 	generalWindowSetup();		// run initial console defaults.
 
-	playSong0();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
+	playThemeSong();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
 
 	//startUpScreen();			//(REMOVE to skip load)
 	//getUsername();			//(REMOVE to skip load)

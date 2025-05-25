@@ -990,6 +990,10 @@ void drawMenu() {
 
                 if (dailyTicketCount > 0) {
                     playSnapAnimationROAM();
+
+                    if (soundOn == true) {
+                        playExitSound();
+                    }
                 }
 
                 else {
@@ -1006,8 +1010,14 @@ void drawMenu() {
                 counterForMainMenu = 0;
                 counterForOptionMenu = 0;
                 gameActive = true; // now in-game
-                bouncingDot(5, 5, 5, 2000, 100);
                 muteSound();
+
+                if (soundOn == true) {
+                    playLoadSound();
+                }
+
+                bouncingDot(5, 5, 5, 3000, 100);
+                
                
             }
 
@@ -1091,7 +1101,7 @@ void drawMenu() {
             // check if we hit "SOUND" button (on)
             else if (counterForOptionMenu == 1 && isOptionMenuActive == true && isSLAsOn == false) {
 
-                playSong0();
+                playThemeSong();
                 isSLAsOn = true;
                 soundOn = true;
 

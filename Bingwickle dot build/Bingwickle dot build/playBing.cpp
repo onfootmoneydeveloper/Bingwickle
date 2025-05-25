@@ -413,6 +413,10 @@ void play() {
 			playRiseAndSlamAnimationROAM();
 			loadTicketCountsFromFile();
 
+			if (soundOn == true) {
+				playStatsSound();
+			}
+
 			outputLog.push_back("    daily = " + std::to_string(dailyTicketCount) + ", total = " + std::to_string(totalTicketCount));
 		}
 
@@ -421,6 +425,11 @@ void play() {
 			if (dailyTicketCount == 0) { // there is nothing to merge
 
 				hideTheCursor();
+
+				if (soundOn == true) {
+					playBadInputSound();
+				}
+
 				outputLog.push_back("    There's no need to merge.");
 			
 			}
@@ -430,6 +439,11 @@ void play() {
 				hideTheCursor();
 				mergeDailyIntoTotal();
 				slapConsoleWindowAnimation();
+
+				if (soundOn == true) {
+					playMergeSound();
+				}
+
 				outputLog.push_back("    Merged stats.");
 			
 			}
@@ -447,6 +461,11 @@ void play() {
 
 				if (isDuplicate == true) {
 					setcolor(red, black);
+
+					if (soundOn == true) {
+						playBadInputSound();
+					}
+
 					outputLog.push_back("    Duplicate.");
 					setcolor(white, black);
 					isDuplicate = false;
@@ -463,6 +482,12 @@ void play() {
 		}
 
 		else {
+
+
+			if (soundOn == true) {
+				playBadInputSound();
+			}
+
 			outputLog.push_back("    Invalid reference!");
 		}
 	}
@@ -472,7 +497,7 @@ void play() {
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 	
 	if (soundOn == true) {
-		playSong0();
+		playThemeSong();
 	}
 
 }

@@ -10,21 +10,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
 [AUDIO]
 
@@ -36,11 +21,9 @@
 
 > sound effect for merge
 
-> audio louder
+> ticket sound / SLAs LOUDER
 
 > exit sound if there are still tickets available
-
-
 
 
 
@@ -62,9 +45,6 @@
 
 
 
-
-
-
 [SNAP: BETA] ** for v.2 and beyond
 
 > Snap to reality/simulation mode: uses 2 seperate modes (simulation and/or operator) - 
@@ -76,8 +56,6 @@
 
 > a new world - design and develop and load-in a game to play, called "snap". 
 	this will also edit the users directory with NEW stats
-
-
 
 
 

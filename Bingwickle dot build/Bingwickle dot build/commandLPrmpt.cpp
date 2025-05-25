@@ -423,7 +423,7 @@ void GameFeedInput() {
 		displayUI();
 
 		if (soundOn == true) {
-			playSong0();
+			playThemeSong();
 		}
 
 		std::this_thread::sleep_for(chrono::seconds(1));

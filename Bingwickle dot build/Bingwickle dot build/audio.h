@@ -16,16 +16,28 @@ extern bool ticketSoundPlay;
 extern int trackNumber;
 
 // play start out
-void playSong0();
+void playThemeSong();
 
 // mute sound
 void muteSound();
 
-// song 1 call
-void playSong1();
-
 // ticket sound
 void playTicketSound();
+
+// merge sound
+void playMergeSound();
+
+// exit sound
+void playExitSound();
+
+// bad input sound
+void playBadInputSound();
+
+// play load sound
+void playLoadSound();
+
+// play stats sound
+void playStatsSound();
 
 
 

@@ -26,21 +26,47 @@ int trackNumber = 0;
 
 
 // play our initial start up sound.
-void playSong0() {
+void playThemeSong() {
 
-	PlaySound(TEXT("SLAs.wav"), NULL, SND_FILENAME | SND_ASYNC);
+	PlaySound(TEXT("theme_sfx.wav"), NULL, SND_FILENAME | SND_ASYNC);
 }
 
-void playSong1() {
-
-	PlaySound(TEXT("Debrief.wav"), NULL, SND_FILENAME | SND_ASYNC);
-
-}
 
 void playTicketSound() {
 
-	PlaySound(TEXT("Ticket.wav"), NULL, SND_FILENAME | SND_ASYNC);
+	PlaySound(TEXT("ticket_sfx.wav"), NULL, SND_FILENAME | SND_ASYNC);
 }
+
+void playMergeSound() {
+
+	PlaySound(TEXT("merge_sfx.wav"), NULL, SND_FILENAME | SND_ASYNC);
+
+}
+
+void playExitSound() {
+
+	PlaySound(TEXT("exit_sfx.wav"), NULL, SND_FILENAME | SND_ASYNC);
+
+}
+
+void playBadInputSound() {
+
+	PlaySound(TEXT("noref_sfx.wav"), NULL, SND_FILENAME | SND_ASYNC);
+
+}
+
+void playLoadSound() {
+
+	PlaySound(TEXT("play_sfx.wav"), NULL, SND_FILENAME | SND_ASYNC);
+
+}
+
+void playStatsSound() {
+
+	PlaySound(TEXT("stats_sfx.wav"), NULL, SND_FILENAME | SND_ASYNC);
+
+}
+
 
 // stop the sound
 void muteSound() {
