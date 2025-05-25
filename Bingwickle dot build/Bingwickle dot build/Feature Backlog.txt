@@ -8,8 +8,6 @@
 
 > add .dll files to build so that it works on NEW NEC laptops
 
-> ticket sound / SLAs LOUDER
-
 
 
 

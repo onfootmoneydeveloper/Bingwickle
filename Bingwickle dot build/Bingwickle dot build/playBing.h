@@ -30,13 +30,7 @@ extern int number;
 // lets count daily tickets
 extern int dailyTicketCount;
 
-// just testing it out
-void playTestToExit();
-
-// print daily tickets to MM
-void printAtPosition(int x, int y, const std::string& text);
-
-// play func
+// play function
 void play();
 
 // save ticket locally

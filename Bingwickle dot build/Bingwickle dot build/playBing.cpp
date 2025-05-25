@@ -7,7 +7,6 @@
 #include <vector>	
 #include <chrono>
 #include <format>      // For C++20 std::format 
-
 #include <ctime>
 
 #include "setConsole.h"
@@ -61,23 +60,7 @@ int totalTicketCount = 0;
 
 namespace fs = std::filesystem;
 
-void printAtPosition(int x, int y, const std::string& text) {
-
-	COORD coord;
-	coord.X = x;
-	coord.Y = y;
-
-	// Get handle to the console output
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleCursorPosition(hConsole, coord);
-
-	std::cout << text;
-}
-
-void playTestToExit() {
-	exit(0);
-}
-
+// save ticket
 void saveTicket() {
 
 	// Get current date in YYYY-MM-DD format
@@ -147,6 +130,7 @@ void saveTicket() {
 	setcolor(white, black);
 }
 
+// store daily ticket count
 void saveDailyTicketPoint() {
 
 	namespace fs = std::filesystem;
@@ -193,6 +177,7 @@ void saveDailyTicketPoint() {
 	}
 }
 
+// ticket counts for "total" and "daily"
 void loadTicketCountsFromFile() {
 
 	namespace fs = std::filesystem;
@@ -226,6 +211,7 @@ void loadTicketCountsFromFile() {
 	}
 }
 
+// merge daily to total
 void mergeDailyIntoTotal() {
 
 	namespace fs = std::filesystem;
