@@ -1,8 +1,6 @@
 
 [FEATURE/CHANGE BACKLOG]
 
-> fix MM delay (test on other laptops)
-
 > add .dll files to build so that it works on NEW NEC laptops
 
 
@@ -158,6 +156,8 @@
 > sound effect when SLAM hits (on SNAP beta)
 
 > "Cmds" green, "duplicate" red, "Saved Ticket: 4444444" , yellow, "merged stats" idk, 
+
+> fix MM delay (test on other laptops)
 
 
 
