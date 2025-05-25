@@ -102,20 +102,20 @@ void getUsername() {
 	cout << "\n\n\n\n\n\n";
 	cout << "          ";
 	setcolor(white, black);
-	cout << "[ENTER YOUR NAME]" << endl;
+	cout << "[ ENTER USERNAME ]" << endl;
 
 	// warning 
 	cout << "\n\n";
 	cout << "   ";
 	setcolor(blue, black);
-	cout << "CHANGE AT: C:\\Bingwickle\\Users\\" << endl;
+	cout << "    Location: C:\\Bingwickle\\" << endl;
 
 	// get the user's name
 	setcolor(white, black);
 	cout << "\n\n";
 	cout << "            ";
 	setcolor(green, black);
-	cout << ">  ";
+	cout << "  >  ";
 	setcolor(white, black);
 
 	std::getline(std::cin >> std::ws, globalUsername);   // <-- called from global	
@@ -275,7 +275,7 @@ void setUpUserPath() {
 			cout << "9:00AM";
 			setcolor(white, black);
 			cout << "." << endl;
-			getchar();
+			std::this_thread::sleep_for(std::chrono::seconds(10000));
 			system("cls"); // clear our screen
 			exit(0);
 		}
@@ -337,7 +337,7 @@ int main() {
 	playThemeSong();			// when WIN is set, play start up. **TURN ON IN AUDIO.CPP**
 
 	//startUpScreen();			//(REMOVE to skip load)
-	//getUsername();			//(REMOVE to skip load)
+	//getUsername();				//(REMOVE to skip load)
 	//setUpUserPath();			//(REMOVE to skip load)
 
 	//incrementLoginCount();	// <--- whenever you login, get +1

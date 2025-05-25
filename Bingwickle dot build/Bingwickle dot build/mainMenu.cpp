@@ -119,9 +119,6 @@ void soundToggleIcon() {
     }
 }
 
-
-
-
 // this is the default screen that we only call once.
 void DisplayDefaultMenu() {
 
@@ -896,10 +893,6 @@ void drawMenu() {
                     counterForMainMenu--;
                 }
 
-
-
-
-
                 //cout << "value: " << counterForMainMenu;
                 //std::this_thread::sleep_for(chrono::seconds(1));
 
@@ -1016,8 +1009,8 @@ void drawMenu() {
                     playLoadSound();
                 }
 
-                bouncingDot(5, 5, 5, 3000, 100);
-                
+                //int row, int startCol, int endCol
+                bouncingDot(10, 20, 5, 3000, 100);
                
             }
 
@@ -1036,8 +1029,6 @@ void drawMenu() {
                 runGameFeed();
                 
                 */
-
-
 
             }
 
@@ -1147,7 +1138,5 @@ void drawMenu() {
         }
 
     } while ((gameOver == false) && (gameActive == false) && (consoleActive == false));
-
-    
 
 }

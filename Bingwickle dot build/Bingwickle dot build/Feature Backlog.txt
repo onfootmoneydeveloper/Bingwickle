@@ -1,9 +1,6 @@
 
 [FEATURE/CHANGE BACKLOG]
 
-
-> split output.push so text between text can change colour
-
 > fix MM delay (test on other laptops)
 
 > add .dll files to build so that it works on NEW NEC laptops
@@ -11,17 +8,12 @@
 
 
 
+
 [COMMANDS]
 
+-> stats (show daily/total)
 -> merge (add daily to total)
--> done (exits out of ANY window)
--> stats? (show daily/total)
-> clear? (clears console)
-> delete
-> find
-> run
-> exit
-> back
+-> exit (exits out of ANY window)
 
 
 
@@ -164,6 +156,8 @@
 > always show 'daily ticket count' / (or "tickets") on MM if you have any
 
 > sound effect when SLAM hits (on SNAP beta)
+
+> "Cmds" green, "duplicate" red, "Saved Ticket: 4444444" , yellow, "merged stats" idk, 
 
 
 

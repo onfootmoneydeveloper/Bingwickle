@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <windows.h>
 #include <thread>
 #include <string>
@@ -274,6 +274,7 @@ void bouncingDot(int row, int startCol, int endCol, int durationMs = 2000, int d
 	system("cls");
 
 	for (int i = 0; i < steps; ++i) {
+
 		std::cout << "\033[" << row << ";" << pos << "H" << "." << std::flush;
 		std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
 		std::cout << "\033[" << row << ";" << pos << "H" << " " << std::flush; // erase dot
@@ -321,6 +322,7 @@ void slapConsoleWindowAnimation(int impact = 30, int wobble = 6, int wobbleTimes
 void play() {
 
 	system("cls");
+
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 
 	if (!cursorOff) {
@@ -338,8 +340,7 @@ void play() {
 
 	bool displayCommandList = true;
 
-	outputLog.push_back("    Cmds: stats, merge, exit");
-	//outputLog.push_back("    Cmds: copy, clear. ");
+	outputLog.push_back("    Cmds: stats, merge, exit.");
 	outputLog.push_back("  ");
 	
 
@@ -364,12 +365,14 @@ void play() {
 
 		// renders latest message starting from most recent - prints each one by one
 		for (auto it = outputLog.rbegin(); it != outputLog.rend(); ++it) {
+
 			if (line >= maxLines) break;
 
 			COORD logPos = { 0, static_cast<SHORT>(inputPos.Y - 2 - line) };
+
 			SetConsoleCursorPosition(hConsole, logPos);
 
-			// Always print 80 characters, even if message is shorter
+			// Always print 30 characters, even if message is shorter
 			std::cout << std::left << std::setw(30) << *it;
 
 			++line;
@@ -377,7 +380,11 @@ void play() {
 
 		// set new console position before getting input
 		SetConsoleCursorPosition(hConsole, inputPos);
-		std::cout << "    Users\\" << globalUsername << ">  ";
+		std::cout << "    Users\\";
+		setcolor(green, black);
+		std::cout << globalUsername;
+		setcolor(white, black);
+		std::cout << ">  ";
 		std::cin >> input;
 
 		// check if DONE command was used
