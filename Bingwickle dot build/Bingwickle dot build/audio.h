@@ -2,8 +2,6 @@
 
 #include <windows.h>
 
-
-
 // song1 checker
 extern bool isDebriefOn;
 

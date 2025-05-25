@@ -54,13 +54,10 @@
 int number;
 std::string input;
 
-
 bool isDuplicate = false;
 
 int dailyTicketCount = 0;
 int totalTicketCount = 0;
-
-
 
 namespace fs = std::filesystem;
 
@@ -334,9 +331,6 @@ void slapConsoleWindowAnimation(int impact = 30, int wobble = 6, int wobbleTimes
 	// Step 3: Settle back to original position
 	SetWindowPos(hwnd, nullptr, originalX, originalY, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
 }
-
-
-
 
 void play() {
 

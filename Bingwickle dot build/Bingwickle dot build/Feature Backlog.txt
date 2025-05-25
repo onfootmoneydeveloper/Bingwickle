@@ -8,23 +8,7 @@
 
 > add .dll files to build so that it works on NEW NEC laptops
 
-
-
- 
-[AUDIO]
-
-> sound effect when SLAM hits (on SNAP beta)
-
-> sound effect when you  hit 'play' (teleport idk)
-
-> slam sound effect for STATS
-
-> sound effect for merge
-
 > ticket sound / SLAs LOUDER
-
-> exit sound if there are still tickets available
-
 
 
 
@@ -137,6 +121,14 @@
 
 -> text on "play" feed different color (gray/white)
 
+-> sound effect when you  hit 'play' (teleport idk)
+
+-> slam sound effect for STATS
+
+-> sound effect for merge
+
+-> exit sound if there are still tickets available
+
 
 [ABANDONED]
 
@@ -172,6 +164,8 @@
 > loading screen on 'play' (tips? quotes? riddles?) *check references*
 
 > always show 'daily ticket count' / (or "tickets") on MM if you have any
+
+> sound effect when SLAM hits (on SNAP beta)
 
 
 
