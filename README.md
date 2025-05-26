@@ -1,6 +1,6 @@
 # Bingwickle v.1one
 
-Location: Bingwickle-v.1one\Bingwickle\exe\Bingwickle.exe
+Location: Bingwickle-main\Bingwickle\exe\Bingwickle.exe
 
  Ticket reference tracker
 
