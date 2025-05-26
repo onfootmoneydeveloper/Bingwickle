@@ -1,4 +1,4 @@
-# Bingwickle v.1one
+# Bingwickle v1.0
 
 Location: Bingwickle-main\Bingwickle\exe\Bingwickle.exe
 
